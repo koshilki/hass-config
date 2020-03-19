@@ -1,0 +1,87 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+sensor: !include sensors.yaml
+
+homeassistant:
+  customize: !include customize.yaml
+
+lovelace:
+  mode: yaml
+
+mobile_app:
+
+frontend:
+  themes: !include_dir_merge_named themes
+
+tado: 
+  username: !secret tado_username
+  password: !secret tado_password
+
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways: !secret xiaomi_aqara_gateways
+
+http:
+  base_url: !secret base_url
+
+notify:
+  - platform: html5
+    vapid_pub_key: !secret vapid_pub_key
+    vapid_prv_key: !secret vapid_prv_key
+    vapid_email: !secret vapid_email
+
+device_tracker:
+  - platform: tado
+    username: !secret tado_username
+    password: !secret tado_password
+    home_id: !secret tado_home_id
+
+vacuum:
+  - platform: xiaomi_miio
+    host: !secret xiaomi_vacuum_ip
+    token: !secret xiaomi_vacuum_token
+
+switch:
+  - platform: xiaomi_miio
+    name: Floor lamp
+    host: !secret xiaomi_switch_1_ip
+    token: !secret xiaomi_switch_1_token
+  - platform: xiaomi_miio
+    name: Christmas tree
+    host: !secret xiaomi_switch_2_ip
+    token: !secret xiaomi_switch_2_token
+  - platform: xiaomi_miio
+    name: Power strip
+    host: !secret xiaomi_power_strip_ip
+    token: !secret xiaomi_power_strip_token
+
+alarm_control_panel:
+  - platform: manual
+    name: Home Alarm
+    pending_time: 30
+    delay_time: 20
+    trigger_time: 4
+    disarmed:
+      trigger_time: 0
+    armed_home:
+      pending_time: 0
+      delay_time: 0
+
+media_player:
+  - platform: androidtv
+    name: MiBox 3
+    host: !secret xiaomi_mibox3_ip

@@ -1,0 +1,18 @@
+title: Home
+theme: Google Dark Theme
+# Include external resources
+resources:
+  - url: /local/community/monster-card/monster-card.js
+    type: js
+  - url: /local/community/multiple-entity-row/multiple-entity-row.js?v=2.2.0
+    type: module
+  - url: /local/community/lovelace-layout-card/layout-card.js
+    type: module
+  - url: /local/community/lovelace-xiaomi-vacuum-card/xiaomi-vacuum-card.js?v=3.0.1
+    type: module
+
+views:
+  - !include lovelace/00_home_view.yaml
+  - !include lovelace/01_security_view.yaml
+  - !include lovelace/02_climate_view.yaml
+

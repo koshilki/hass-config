@@ -1,0 +1,3 @@
+sensor.washing_machine_status:
+  friendly_name: "Washing machine"
+  icon: mdi:washing-machine

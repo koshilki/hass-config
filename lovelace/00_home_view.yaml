@@ -1,0 +1,54 @@
+title: Home
+# Unique path for direct access /lovelace/${path}
+path: home
+# The cards to show on this view.
+cards:
+  - type: custom:layout-card
+    layout: vertical
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: picture-entity
+            entity: person.lena
+            image: /local/pictures/lena.jpg
+            show_name: false
+            tap_action:
+              action: more-info
+            style: |
+              ha-card {
+                border-radius: 8px;
+              }
+          - type: picture-entity
+            entity: person.kirill
+            image: /local/pictures/kirill.jpg
+            show_name: false
+            tap_action:
+              action: more-info
+            style: |
+              ha-card {
+                border-radius: 8px;
+              }
+  - type: entities
+    entities:
+      - sensor.washing_machine_status
+  - type: custom:xiaomi-vacuum-card
+    entity: vacuum.xiaomi_vacuum_cleaner
+    name: Living room vacuum cleaner
+  - type: weather-forecast
+    entity: weather.home
+  - type: media-control
+    entity: media_player.living_room_speaker
+  - type: media-control
+    entity: media_player.mibox3
+  - type: entities
+    entities:
+      - switch.xiaomi_miio_switch_3
+      - switch.xiaomi_miio_switch_2
+      - switch.power_strip
+      - switch.study_workplace_plug
+      - switch.living_room_tvzone_plug
+      - switch.laundry_washing_machine_plug
+
+
+
+

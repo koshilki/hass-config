@@ -1,0 +1,135 @@
+title: Climate
+path: climate
+icon: mdi:home-thermometer
+cards:
+  - type: entities
+    title: Climate and heating
+    icon: mdi:home-thermometer-outline
+    show_header_toggle: false
+    entities:
+      - entity: sensor.living_room_heating
+        type: custom:multiple-entity-row
+        name: Living room
+        secondary_info: last-changed
+        primary:
+          entity: sensor.living_room_temperature_xiaomi
+          name: temperature
+        secondary:
+          entity: sensor.living_room_humidity_xiaomi
+          name: humidity
+        tertiary:
+          entity: sensor.living_room_pressure_xiaomi
+          name: pressure
+        icon: mdi:radiator
+      - entity: sensor.hallway_heating
+        type: custom:multiple-entity-row
+        name: Hallway
+        secondary_info: last-changed
+        primary:
+          entity: sensor.hallway_temperature_xiaomi
+          name: temperature
+        secondary:
+          entity: sensor.hallway_humidity_xiaomi
+          name: humidity
+        tertiary:
+          entity: sensor.hallway_pressure_xiaomi
+          name: pressure
+        icon: mdi:radiator
+      - entity: sensor.master_bedroom_heating
+        type: custom:multiple-entity-row
+        name: Master bedroom
+        secondary_info: last-changed
+        primary:
+          entity: sensor.master_bedroom_temperature_xiaomi
+          name: temperature
+        secondary:
+          entity: sensor.master_bedroom_humidity_xiaomi
+          name: humidity
+        tertiary:
+          entity: sensor.master_bedroom_pressure_xiaomi
+          name: pressure
+        icon: mdi:radiator
+      - entity: sensor.daniil_s_room_heating
+        type: custom:multiple-entity-row
+        name: Daniil's room
+        secondary_info: last-changed
+        primary:
+          entity: sensor.daniil_s_room_temperature_xiaomi
+          name: temperature
+        secondary:
+          entity: sensor.daniil_s_room_humidity_xiaomi
+          name: humidity
+        tertiary:
+          entity: sensor.daniil_s_room_pressure_xiaomi
+          name: pressure
+        icon: mdi:radiator
+      - entity: sensor.mark_s_room_heating
+        type: custom:multiple-entity-row
+        name: Mark's room
+        secondary_info: last-changed
+        primary:
+          entity: sensor.mark_s_room_temperature_xiaomi
+          name: temperature
+        secondary:
+          entity: sensor.mark_s_room_humidity_xiaomi
+          name: humidity
+        tertiary:
+          entity: sensor.mark_s_room_pressure_xiaomi
+          name: pressure
+        icon: mdi:radiator
+      - entity: sensor.bathroom_heating
+        type: custom:multiple-entity-row
+        name: Bathroom
+        secondary_info: last-changed
+        primary:
+          entity: sensor.bathroom_temperature_xiaomi
+          name: temperature
+        secondary:
+          entity: sensor.bathroom_humidity_xiaomi
+          name: humidity
+        tertiary:
+          entity: sensor.bathroom_pressure_xiaomi
+          name: pressure
+        icon: mdi:radiator
+      - entity: sensor.study_heating
+        type: custom:multiple-entity-row
+        name: Laundry
+        secondary_info: last-changed
+        primary:
+          entity: sensor.laundry_temperature_xiaomi
+          name: temperature
+        secondary:
+          entity: sensor.laundry_humidity_xiaomi
+          name: humidity
+        tertiary:
+          entity: sensor.laundry_pressure_xiaomi
+          name: pressure
+        icon: mdi:radiator
+      - entity: sensor.study_heating
+        type: custom:multiple-entity-row
+        name: Study
+        secondary_info: last-changed
+        primary:
+          entity: sensor.study_temperature_xiaomi
+          name: temperature
+        secondary:
+          entity: sensor.study_humidity_xiaomi
+          name: humidity
+        tertiary:
+          entity: sensor.study_pressure_xiaomi
+          name: pressure
+        icon: mdi:radiator
+  - type: thermostat
+    entity: climate.living_room
+  - type: thermostat
+    entity: climate.hallway
+  - type: thermostat
+    entity: climate.master_bedroom
+  - type: thermostat
+    entity: climate.daniil_s_room
+  - type: thermostat
+    entity: climate.mark_s_room
+  - type: thermostat
+    entity: climate.bathroom
+  - type: thermostat
+    entity: climate.study

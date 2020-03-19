@@ -1,0 +1,20 @@
+- platform: buienalarm
+  timeframe: 15
+  name: buienalarm
+  monitored_conditions:
+    - temperature
+    - precipitation
+    - precipitation_forecast_average
+    - precipitation_forecast_total
+- platform: template
+  sensors:
+    washing_machine_status:
+      value_template: >-
+        {% if states.switch.laundry_washing_machine_plug.attributes.load_power | int < 2 %}
+          off
+        {% else %}
+          on
+        {% endif %}
+      attribute_templates:
+        load_power: "{{ states.switch.laundry_washing_machine_plug.attributes.load_power }}"
+        entity_picture: "/local/pictures/washer-{{ states('sensor.washing_machine_status') }}.jpg"

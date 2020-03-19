@@ -1,0 +1,57 @@
+title: Security
+path: security
+icon: mdi:shield-home
+cards:
+  - type: alarm-panel
+    entity: alarm_control_panel.home_alarm
+  - type: entities
+    title: Status
+    show_header_toggle: false
+    icon: mdi:shield-lock
+    entities:
+      - type: section
+        label: Ground floor
+      - entity: binary_sensor.front_door
+        icon: mdi:door
+        type: custom:multiple-entity-row
+        secondary_info: last-changed
+      - entity: binary_sensor.back_door
+        icon: mdi:door
+        type: custom:multiple-entity-row
+        secondary_info: last-changed
+      - entity: binary_sensor.kitchen_window
+        icon: mdi:window-closed-variant
+        type: custom:multiple-entity-row
+        secondary_info: last-changed
+      - entity: binary_sensor.living_room_motion
+        icon: mdi:motion-sensor
+        type: custom:multiple-entity-row
+        secondary_info: last-changed
+      - type: section
+        label: First floor
+      - entity: binary_sensor.daniil_s_room_window
+        icon: mdi:window-closed-variant
+        type: custom:multiple-entity-row
+        secondary_info: last-changed
+      - entity: binary_sensor.mark_s_room_window
+        icon: mdi:window-closed-variant
+        type: custom:multiple-entity-row
+        secondary_info: last-changed
+      - entity: binary_sensor.master_bedroom_window_1
+        icon: mdi:window-closed-variant
+        type: custom:multiple-entity-row
+        secondary_info: last-changed
+      - entity: binary_sensor.master_bedroom_window_2
+        icon: mdi:window-closed-variant
+        type: custom:multiple-entity-row
+        secondary_info: last-changed
+      - type: section
+        label: Attic
+      - entity: binary_sensor.study_window_ne
+        icon: mdi:window-closed-variant
+        type: custom:multiple-entity-row
+        secondary_info: last-changed
+      - entity: binary_sensor.study_window_sw
+        icon: mdi:window-closed-variant
+        type: custom:multiple-entity-row
+        secondary_info: last-changed

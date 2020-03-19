@@ -1,0 +1,76 @@
+- alias: 'Trigger alarm while armed away'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.back_door
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.front_door
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.kitchen_window
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.daniil_s_room_window
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.mark_s_rom_window
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.master_bedroom_window_1
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.master_bedroom_window_2
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.study_window_ne
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.study_window_sw
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.living_room_motion
+      to: 'on'
+  condition:
+    - condition: or
+      conditions:
+        - condition: state
+          entity_id: alarm_control_panel.home_alarm
+          state: armed_away
+        - condition: state
+          entity_id: alarm_control_panel.home_alarm
+          state: armed_home
+  action:
+    - service: alarm_control_panel.alarm_trigger
+      entity_id: alarm_control_panel.home_alarm
+    - service: notify.notify
+      data:
+        title: ALARM
+      data_template:
+        message: "The alarm has been triggered by {{ states[trigger.to_state.domain][trigger.to_state.object_id].name }}"
+    - service: persistent_notification.create
+      data:
+        title: ALARM
+      data_template:
+        message: "The alarm has been triggered by {{ states[trigger.to_state.domain][trigger.to_state.object_id].name }}"
+- alias: "Send notification when washing machine status changes"
+  trigger:
+    platform: state
+    entity_id: sensor.washing_machine_status
+  condition:
+    - condition: and
+      conditions:
+      - condition: template
+        value_template: '{{ trigger.from_state.state != trigger.to_state.state }}'
+  action:
+    - service: notify.notify
+      data:
+        title: Washing machine
+      data_template:
+        # message: "Washing machine state changed to {{ trigger.to_state.state }}"
+        message: >-
+          {% if trigger.to_state.state == 'on' %}
+            Started washing program
+          {% elif trigger.to_state.state == 'off' %}
+            Finished washing program
+          {% endif %}
+          
