@@ -89,8 +89,4 @@
         title: Vacuum cleaner
       data_template:
         message: >-
-          {% if trigger.to_state.state == 'cleaning' %}
-            Started cleaning
-          {% elif trigger.to_state.state == 'returning' %}
-            Finished cleaning
-          {% endif %}
+          {% trigger.to_state.state %}

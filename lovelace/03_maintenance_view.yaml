@@ -1,6 +1,6 @@
 title: Maintenance
 path: maintenance
-icon: mdi:cog-box
+icon: mdi:cog
 cards:
   - type: entities
     title: Automations
