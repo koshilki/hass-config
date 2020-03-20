@@ -73,4 +73,24 @@
           {% elif trigger.to_state.state == 'off' %}
             Finished washing program
           {% endif %}
-          
+
+- alias: "Send notification when vacuum cleaner status changes"
+  trigger:
+    platform: state
+    entity_id: vacuum.xiaomi_vacuum_cleaner
+  condition:
+    - condition: and
+      conditions:
+      - condition: template
+        value_template: '{{ trigger.from_state.state != trigger.to_state.state }}'
+  action:
+    - service: notify.notify
+      data:
+        title: Vacuum cleaner
+      data_template:
+        message: >-
+          {% if trigger.to_state.state == 'cleaning' %}
+            Started cleaning
+          {% elif trigger.to_state.state == 'returning' %}
+            Finished cleaning
+          {% endif %}

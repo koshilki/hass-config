@@ -15,4 +15,5 @@ views:
   - !include lovelace/00_home_view.yaml
   - !include lovelace/01_security_view.yaml
   - !include lovelace/02_climate_view.yaml
+  - !include lovelace/03_maintenance_view.yaml
 

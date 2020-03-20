@@ -1,0 +1,11 @@
+title: Maintenance
+path: maintenance
+icon: mdi:cog-box
+cards:
+  - type: entities
+    title: Automations
+    show_header_toggle: false
+    entities:
+      - entity: automation.trigger_alarm_while_armed_away
+      - entity: automation.send_notification_when_washing_machine_status_changes
+      - entity: automation.send_notification_when_vacuum_cleaner_status_changes
