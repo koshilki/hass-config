@@ -10,6 +10,8 @@ resources:
     type: module
   - url: /local/community/lovelace-xiaomi-vacuum-card/xiaomi-vacuum-card.js?v=3.0.1
     type: module
+  - url: /local/community/popup-backdrop-filter/popup-backdrop-filter.js
+    type: module
 
 views:
   - !include lovelace/00_home_view.yaml
