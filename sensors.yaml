@@ -33,9 +33,12 @@
         {% else %}
           on
         {% endif %}
+      entity_picture_template: >-
+        {% if states('sensor.washing_machine_status') == 'off' %} /local/pictures/washer-off.jpg
+        {% else %} /local/pictures/washer-off.jpg
+        {% endif %}
       attribute_templates:
         load_power: "{{ states.switch.laundry_washing_machine_plug.attributes.load_power }}"
-        entity_picture: "/local/pictures/washer-{{ states('sensor.washing_machine_status') }}.jpg"
 
     hass_version_template:
       friendly_name: Latest version
@@ -109,8 +112,8 @@
     nas_disk_smart_status:
       friendly_name: S.M.A.R.T. status
       icon_template: >
-        {% if states('sensor.nas_disk_smart_status') == 'OK' %} 'mdi:check-circle'
-        {% else %} 'mdi:alert-circle'
+        {% if states('sensor.nas_disk_smart_status') == 'OK' %} mdi:check-circle
+        {% else %} mdi:alert-circle
         {% endif %}
       value_template: >
         {% if states('sensor.nas16063a_smart_status_drive_0_1') == 'OK' and states('sensor.nas16063a_smart_status_drive_0_2') == 'OK' %} OK

@@ -16,6 +16,8 @@ resources:
     type: module
   - url: /local/community/mini-graph-card/mini-graph-card-bundle.js
     type: module
+  - url: /local/community/mini-media-player/mini-media-player-bundle.js
+    type: module
 
 views:
   - !include lovelace/00_home_view.yaml
