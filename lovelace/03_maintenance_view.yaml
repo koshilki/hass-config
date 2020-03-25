@@ -22,7 +22,10 @@ cards:
       }
     entities:
     - entity: sensor.nas16063a_status
+      name: NAS Status
       icon: 'mdi:nas'
+    - entity: sensor.nas_disk_smart_status
+    - entity: sensor.nas_disk_temp
     - entity: sensor.nas16063a_cpu_usage
       background_style:
         background: >-
@@ -166,10 +169,10 @@ cards:
           entity_id: sensor.nas16063a_volume_used_datavol1
     - type: 'custom:mini-graph-card'
       entities:
-        - color: '#385581'
-          entity: sensor.nas16063a_network_up_eth0
         - color: green
           entity: sensor.nas16063a_network_down_eth0
+        - color: '#385581'
+          entity: sensor.nas16063a_network_up_eth0
       points_per_hour: 20
       line_width: 2.5
       hour24: true

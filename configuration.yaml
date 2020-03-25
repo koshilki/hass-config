@@ -10,6 +10,10 @@ default_config:
 tts:
   - platform: google_translate
 
+google:
+  client_id: !secret google_client_id
+  client_secret: !secret google_client_secret
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
