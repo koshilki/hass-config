@@ -1,0 +1,2724 @@
+badges: []
+cards:
+  - elements:
+      # - title: preload_popup
+      #   entities:
+      #     - input_number.monitorer_volume
+      #     - group.automation_system_reference
+      #     - input_select.hdmi
+      #     - person.mattias
+      #     - person.sanja
+      #   style:
+      #     left: -50%
+      #     opacity: 0
+      #   type: 'custom:hui-entities-card'
+
+      - entity: sensor.placeholder
+        prefix: livingroom
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        style:
+          color: '#bcbebf'
+          font-family: SF Text
+          font-size: 2.4vw
+          font-weight: 500
+          left: 24.85%
+          max-width: 1px
+          top: 9.15%
+          cursor: default
+        type: state-label
+      - entity: sensor.placeholder
+        prefix: Studio
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        style:
+          color: '#bcbebf'
+          font-family: SF Text
+          font-size: 2.4vw
+          font-weight: 500
+          left: 49.65%
+          max-width: 1px
+          top: 9.15%
+          cursor: default
+        type: state-label
+      - entity: sensor.placeholder
+        prefix: Sovrum
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        style:
+          color: '#bcbebf'
+          font-family: SF Text
+          font-size: 2.4vw
+          font-weight: 500
+          left: 74.55%
+          max-width: 1px
+          top: 9.15%
+          cursor: default
+        type: state-label
+      - entity: sensor.placeholder
+        prefix: Media
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        style:
+          color: '#bcbebf'
+          font-family: SF Text
+          font-size: 2.4vw
+          font-weight: 500
+          left: 24.75%
+          max-width: 1px
+          top: 53.4%
+          cursor: default
+        type: state-label
+      - entity: sensor.placeholder
+        prefix: Lampor
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        style:
+          color: '#bcbebf'
+          font-family: SF Text
+          font-size: 2.4vw
+          font-weight: 500
+          left: 49.6%
+          max-width: 1px
+          top: 53.4%
+          cursor: default
+        type: state-label
+      - entity: sensor.placeholder
+        prefix: Hemma
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        style:
+          color: '#bcbebf'
+          font-family: SF Text
+          font-size: 2.4vw
+          font-weight: 500
+          left: 74.5%
+          max-width: 1px
+          top: 53.4%
+          cursor: default
+        type: state-label
+
+      #################################################################
+      #                                                               #
+      #                            COVID-19                           #
+      #                                                               #
+      #################################################################
+
+      - content: >
+          <font color='#6a7377'> ‍  ‍  ‍  ‍  ‍
+          <b><ha-icon icon="mdi:mdi:bacteria-outline"></ha-icon> Coronavirus</b>  ‍  ‍  ‍   ‍  ‍  ‍ <font color='#2f3436'>|‍</font>  ‍  ‍  ‍   ‍  ‍  ‍
+          <b><ha-icon icon="mdi:mdi:emoticon-sad"></ha-icon> {{ states('sensor.sweden_coronavirus_current') }}</b> smittade  ‍  ‍  ‍   ‍  ‍  ‍ <font color='#2f3436'>|‍</font>  ‍  ‍  ‍   ‍  ‍  ‍
+          <b><ha-icon icon="mdi:emoticon-happy"></ha-icon> {{ states('sensor.sweden_coronavirus_recovered') }}</b> tillfrisknade  ‍  ‍  ‍   ‍  ‍  ‍ <font color='#2f3436'>|‍</font>  ‍  ‍  ‍   ‍  ‍  ‍
+          <b><ha-icon icon="mdi:grave-stone"></ha-icon> {{ states('sensor.sweden_coronavirus_deaths') }}</b> avlidna  ‍  ‍  ‍   ‍  ‍  ‍ <font color='#2f3436'>|‍</font>  ‍  ‍  ‍   ‍  ‍  ‍
+          <ha-icon icon="mdi:chart-bar"></ha-icon> {{ ((states('sensor.sweden_coronavirus_confirmed') | int / 10327589 ) * 100) | round(4) }}% av Sverige
+          </font>
+        style:
+          '--ha-card-background': none
+          '--ha-card-box-shadow': none
+          '--primary-text-color': '#6a7377'
+          font-family: SF Display
+          font-size: 1.15vw
+          font-weight: 400
+          height: 1px
+          left: 67.6%
+          letter-spacing: 0.06vw
+          line-height: 2.05vw
+          opacity: 0.5
+          top: 91.9%
+          width: 90vw
+        type: 'custom:hui-markdown-card'
+
+      #############################################################################################################################################
+      #                                                                                                                                           #
+      #                                                                  SIDEBAR                                                                  #
+      #                                                                                                                                           #
+      #############################################################################################################################################
+
+      - image: local/sidebar.png
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        style:
+          left: 10.6%
+          top: 50%
+          width: 21.5%
+        type: image
+      - image: local/sidebar_line.svg
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        style:
+          left: 10.6%
+          top: 50%
+          width: 21.5%
+          opacity: 0.75
+        type: image
+
+      #################################################################
+      #                                                               #
+      #                             CLOCK                             #
+      #                                                               #
+      #################################################################
+
+      - entity: sensor.time
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        style:
+          color: 'rgba(255, 255, 255, 0.7)'
+          font-family: SF Text
+          font-size: 5.41vw
+          font-weight: 200
+          left: 2.8%
+          letter-spacing: '-0.05vw'
+          max-width: 1px
+          top: 10.8%
+          cursor: default
+        type: state-label
+
+      #################################################################
+      #                                                               #
+      #                           MARKDOWN                            #
+      #                                                               #
+      #################################################################
+
+      - content: >
+          <font color='#6a7377'><b>{{ states('sensor.dag') }}</b><br>
+          <b>{{ states('sensor.datum') }}</b> </font><br>
+
+          {% set t = now().hour %}
+          {% if t <= 1 %} <b>God natt</b> {{'\U0001F611'}}
+          {% elif t <= 3 %} <b>God natt</b> {{'\U0001F62A'}}
+          {% elif t <= 5 %} <b>God natt</b> {{'\U0001F634'}}
+          {% elif t <= 7 %} <b>God morgon</b> {{'\U0001F4A9'}}
+          {% elif t <= 9 %} <b>God morgon</b> {{'\u2615\uFE0F'}}
+          {% elif t <= 10.5 %} <b>God morgon</b> {{'\U0001F642'}}
+          {% elif t <= 13 %} <b>God dag</b> {{'\U0001F60A'}}
+          {% elif t <= 15 %} <b>God dag</b> {{'\U0001F60E'}}
+          {% elif t <= 17 %} <b>God dag</b> {{'\U0001F44B\U0001F3FB'}}
+          {% elif t <= 19 %} <b>God kväll</b> {{'\U0001F44B\U0001F3FB'}}
+          {% elif t <= 22 %} <b>God kväll</b> {{'\U0001F60C'}}
+          {% elif t <= 23 %} <b>God kväll</b> {{'\U0001F974'}}
+          {% else %} <b>God kväll</b> {{'\U0001F974'}}
+          {% endif %}
+
+          {% set lights = [states.light.tvlampa, states.light.golvlampa, states.light.fonsterlampa, states.light.datorlampa, states.light.vask_hoger, states.light.vask_vanster,
+            states.light.taklampa, states.light.kladkammare_2, states.light.hallampa_1, states.light.hallampa_2, states.light.hallampa_3, states.light.mattias, states.light.sanja, states.light.spot_1, states.light.spot_2] %}
+          {% set lights_on = lights | selectattr('state','eq','on') | list %}
+          {% set lights_name = lights | selectattr('state','eq','on') | map(attribute='name') | join(', ') %}
+
+          {% set switches = [states.switch.dator_template, states.switch.tv_template, states.switch.tv2_template, states.switch.playstation_template, states.switch.wemo_monitorer, states.switch.wemo_flakt] %}
+          {% set switches_on = switches | selectattr('state','eq','on') | list %}
+          {% set switches_name = switches | selectattr('state','eq','on') | map(attribute='name') | join(', ') %}
+
+          {% if (lights_on | length ==0 ) and (switches_on | length > 0) %}
+          <b>{{ switches_name | regex_replace(',([^,]*)$',' och\\1') }} är på</b>
+
+          {% elif (lights_on | length ==1) and (switches_on | length == 1) %}
+          <b>{{ lights_name }} och {{switches_name }} är på</b>
+
+          {% elif (lights_on | length ==1) and (switches_on | length > 1) %}
+          <b>{{ lights_name }}, {{ switches_name | regex_replace(',([^,]*)$',' och\\1') }} är på</b>
+
+          {% elif (lights_on | length > 1) and (switches_on | length == 1) %}
+          <b>{{ lights_on | length }} lampor och {{ switches_name }} är på</b>
+
+          {% elif (lights_on | length > 1 ) and (switches_on | length > 1) %}
+          <b>{{ lights_on | length }} lampor, {{ switches_name | regex_replace(',([^,]*)$',' och\\1') }} är på</b>
+
+          {% elif (lights_on | length ==1) and (switches_on | length ==0) %}
+          <b>{{ lights_name }} är på</b>
+
+          {% elif (lights_on | length >1 ) and (switches_on | length ==0) %}
+          <b>{{ lights_on | length}} lampor är på</b>
+
+          {% else %}
+          <font color='#6a7377'><b>Allt är avstängt</b></font>
+          {% endif %}
+
+          <font color='#6a7377'>
+
+          {% if is_state('vacuum.xiaomi_vacuum_cleaner', 'cleaning') %}
+            <b>Morty dammsuger</b>
+          {% elif is_state('vacuum.xiaomi_vacuum_cleaner', 'returning') %}
+            <b>Morty är färdig</b>
+          {% endif %}
+
+          {% if states('sensor.dark_sky_temperature') == 'unknown' %}
+          Kan inte läsa in väderinformation...
+          {% else %}
+            {% if states('sensor.dark_sky_temperature') | float <= 0.0 %}
+            Känns som {{ states('sensor.dark_sky_apparent_temperature') | round }}° {{'\u2744\uFE0F'}} med {{ states('sensor.dark_sky_precip_probability') | round }}% risk för snö
+
+            {% elif states('sensor.dark_sky_temperature') | float > 0.0 %}
+            Känns som {{ states('sensor.dark_sky_apparent_temperature') | round }}° med {{ states('sensor.dark_sky_precip_probability') | round }}% risk för regn {% if states('sensor.dark_sky_precip_probability') | float > 30.0 %} {{'\u2614\uFE0F' }} {% endif %}
+
+            {% elif states('sensor.dark_sky_temperature') | float > 19.0 and states('sensor.dark_sky_precip_probability') | float < 5.0 %}
+            Känns som {{ states('sensor.dark_sky_apparent_temperature') | round }}° {{'\U0001F60E' }} med {{ states('sensor.dark_sky_precip_probability') | round }}% risk för regn
+            {% endif %}
+          {% endif %}
+
+          Nästa buss går {{ states('sensor.skanetrafiken') }}
+
+
+          {{ states('sensor.tvatta_countdown') }}
+
+          {% if states('sensor.imac_get_ip') == states('sensor.public_ip') or states('sensor.myip') == states('sensor.public_ip') %}
+            {{'\u26A0\uFE0F'}} Kontrollera VPN-anslutning.
+          {% endif %}
+
+          {% if is_state('binary_sensor.check_plex', 'off') %}{{'\u26A0\uFE0F'}} Plex är nere...{% endif %}
+
+          {% if is_state('binary_sensor.nas_internet_access', 'off') %}{{'\u26A0\uFE0F'}} Kontrollera NAS internetåtkomst{% endif %}
+
+        style:
+          '--ha-card-background': none
+          '--ha-card-box-shadow': none
+          '--primary-text-color': 'rgba(255, 255, 255, 0.9)'
+          font-family: SF Display
+          font-size: 1.6vw
+          font-weight: 300
+          height: 1px
+          left: 11%
+          letter-spacing: 0.06vw
+          line-height: 2.05vw
+          opacity: 0.75
+          top: 16%
+          width: 17.5vw
+        type: 'custom:hui-markdown-card'
+
+      - type: conditional
+        conditions:
+          - entity: input_boolean.krisinformation_visibility
+            state: 'on'
+        elements:
+          - cards:
+            - content: >
+                {{'\u26A0\uFE0F'}} <b>Krisinformation</b><br><br>
+                {{ as_timestamp(state_attr('sensor.krisinformation_sverige', 'messages')[0]["Published"]) | timestamp_custom('%Y-%m-%d') }}<br>
+                {{ state_attr('sensor.krisinformation_sverige', 'messages')[0]["Message"] | truncate(280, True, '...', 0) }}
+              style: |
+                ha-card {
+                  padding-top: 0.4vw;
+                }
+              type: 'custom:hui-markdown-card'
+            - type: "custom:button-card"
+              show_label: true
+              label: OK
+              tap_action:
+                action: call-service
+                service: input_boolean.turn_off
+                service_data:
+                  entity_id: input_boolean.krisinformation_visibility
+              styles:
+                label:
+                  - font-size: 1.5vw
+                  - background: '#FFFFFF10'
+                  - border-radius: 0.6vw
+                  - font-weight: 500
+                  - letter-spacing: 0.09vw
+                  - opacity: 0.65
+                  - padding: 0.7vw 1vw 0.8vw 1vw
+                  - font-family: SF Display
+                card:
+                  - width: 4.5vw
+                  - height: 5vw
+                  - margin: auto
+                  - margin-top: -1vw
+                  - padding-bottom: 1vw
+            style:
+              '--ha-card-background': '#5a1f1f'
+              '--ha-card-box-shadow': none
+              filter: 'drop-shadow(0 0 1vw #1e1e1e)'
+              '--primary-text-color': 'rgba(255, 255, 255, 0.9)'
+              font-family: SF Display
+              font-size: 1.3vw
+              font-weight: 300
+              height: 1px
+              max-height: 4vw
+              left: 10.7%
+              letter-spacing: 0.06vw
+              line-height: 1.7vw
+              max-width: 17vw
+              position: absolute
+              top: 18%
+              width: 17.5vw
+              hyphens: auto
+              z-index: 10
+              '--ha-card-border-radius': 0.7vw
+              '--ha-card-border': '0.1vw solid #292c2e'
+            type: 'custom:vertical-stack-in-card'
+
+      - type: conditional
+        conditions:
+          - entity: input_boolean.laundry_timer_visibility
+            state: 'on'
+        elements:
+          - type: "custom:button-card"
+            entity: timer.laundry
+            show_icon: false
+            show_name: false
+            show_state: true
+            tap_action:
+              action: call-service
+              service: script.turn_on
+              service_data:
+                entity_id: script.restart_laundry_timer
+            hold_action:
+              action: call-service
+              service: input_boolean.turn_off
+              service_data:
+                entity_id: input_boolean.laundry_timer_visibility
+            double_tap_action:
+              action: none
+            styles:
+              card:
+                - background: '#202a2f30'
+                - border-radius: 0.7vw
+                - box-shadow: none
+                - border: '0.1vw solid #292c2e'
+              state:
+                - font-size: 2.5vw
+                - font-weight: 500
+                - letter-spacing: 0.09vw
+                - opacity: 0.65
+                - padding: 0.5vw 1vw 0.5vw 1vw
+            style:
+              left: 10.8%
+              top: 78%
+              font-size: 1.6vw
+
+      #################################################################
+      #                                                               #
+      #                        VACUUM BUTTON                          #
+      #                                                               #
+      #################################################################
+
+      - icon: 'bha:roborock'
+        style:
+          '--iron-icon-height': 4vw
+          '--iron-icon-width': 4vw
+          color: 'rgba(255, 255, 255, 0.10)'
+          left: 4.8%
+          top: 87.41%
+        tap_action: !include popup/sidebar_vacuum.yaml
+        title: null
+        type: icon
+
+      #################################################################
+      #                                                               #
+      #                          INFO BUTTON                          #
+      #                                                               #
+      #################################################################
+
+      - icon: 'mdi:information-outline'
+        style:
+          '--iron-icon-height': 4vw
+          '--iron-icon-width': 4vw
+          color: 'rgba(255, 255, 255, 0.10)'
+          left: 10.7%
+          top: 87.41%
+        tap_action: !include popup/sidebar_information.yaml
+        title: null
+        type: icon
+
+      #################################################################
+      #                                                               #
+      #                         SCENES BUTTON                         #
+      #                                                               #
+      #################################################################
+
+      - icon: 'mdi:home-heart'
+        style:
+          '--iron-icon-height': 4.6vw
+          '--iron-icon-width': 4.6vw
+          color: 'rgba(255, 255, 255, 0.10)'
+          left: 16.55%
+          top: 87.55%
+        tap_action: !include popup/sidebar_scenarier.yaml
+        title: null
+        type: icon
+
+      #############################################################################################################################################
+      #                                                                                                                                           #
+      #                                                                livingroom                                                                 #
+      #                                                                                                                                           #
+      #############################################################################################################################################
+
+      #################################################################
+      #                                                               #
+      #                           BELYSNING                           #
+      #                                                               #
+      #################################################################
+
+      - entity: light.belysning
+        state_image:
+          'off': /local/livingroom_belysning_off.png
+          'on': /local/livingroom_belysning_on.png
+          unavailable: /local/unknown.png
+        style:
+          left: 30.31%
+          top: 20.35%
+          width: 10%
+        type: image
+      - conditions:
+          - entity: light.belysning
+            state_not: unavailable
+        elements:
+          - entity: light.belysning
+            icon: 'bha:hue-bulb'
+            style:
+              '--iron-icon-height': 1.87vw
+              '--iron-icon-width': 1.87vw
+              left: 27.40%
+              top: 15.55%
+            type: state-icon
+        type: conditional
+      - conditions:
+          - entity: light.belysning
+            state: 'on'
+        elements:
+          - entity: sensor.belysning_percent
+            fill: '#FFFFFF10'
+            font_style:
+              color: '#7d7e80'
+              font-size: 1.0vw
+              font-weight: 400
+              margin-left: '-0.8%'
+              margin-top: 1.9%
+            gradient: true
+            max: 100
+            min: 0
+            stroke_color: '#aaabad'
+            stroke_width: 6
+            style:
+              height: 3.15vw
+              left: 32.8%
+              opacity: 0.7
+              top: 16.3%
+              width: 3.15vw
+            type: 'custom:circle-sensor-card'
+            units: '%'
+        type: conditional
+      - hold_action: !include popup/livingroom_belysning.yaml
+        image: /local/overlay.svg
+        style:
+          left: 30.31%
+          opacity: 0
+          top: 20.35%
+          width: 10%
+        tap_action:
+          action: call-service
+          service: light.toggle
+          service_data:
+            entity_id: light.belysning
+        title: null
+        type: image
+
+      #################################################################
+      #                                                               #
+      #                           SKRIVBORD                           #
+      #                                                               #
+      #################################################################
+
+      - entity: light.fonsterlampa
+        state_image:
+          'off': /local/livingroom_skrivbord_off.png
+          'on': /local/livingroom_skrivbord_on.png
+          unavailable: /local/unknown.png
+        style:
+          left: 41.31%
+          top: 20.35%
+          width: 10%
+        type: image
+      - conditions:
+          - entity: light.fonsterlampa
+            state_not: unavailable
+        elements:
+          - entity: light.fonsterlampa
+            icon: 'bha:skrivbord'
+            style:
+              '--iron-icon-height': 2.5vw
+              '--iron-icon-width': 2.5vw
+              left: 38.45%
+              top: 15.45%
+            type: state-icon
+        type: conditional
+      - conditions:
+          - entity: light.fonsterlampa
+            state: 'on'
+        elements:
+          - entity: sensor.fonsterlampa_percent
+            fill: '#FFFFFF10'
+            font_style:
+              color: '#7d7e80'
+              font-size: 1.0vw
+              font-weight: 400
+              margin-left: '-0.8%'
+              margin-top: 1.9%
+            gradient: true
+            max: 100
+            min: 0
+            stroke_color: '#aaabad'
+            stroke_width: 6
+            style:
+              height: 3.15vw
+              left: 43.8%
+              opacity: 0.7
+              top: 16.3%
+              width: 3.15vw
+            type: 'custom:circle-sensor-card'
+            units: '%'
+        type: conditional
+      - hold_action: !include popup/livingroom_skrivbordslampa.yaml
+        image: /local/overlay.svg
+        style:
+          left: 41.31%
+          opacity: 0
+          top: 20.35%
+          width: 10%
+        tap_action:
+          action: call-service
+          service: light.toggle
+          service_data:
+            entity_id: light.fonsterlampa
+        title: null
+        type: image
+
+      #################################################################
+      #                                                               #
+      #                              TV                               #
+      #                                                               #
+      #################################################################
+
+      - entity: switch.tv_template
+        hold_action: !include popup/livingroom_tv.yaml
+        state_image:
+          'off': /local/livingroom_tv_off.png
+          'on': /local/livingroom_tv_on.png
+        style:
+          left: 30.31%
+          top: 37.9%
+          width: 10%
+        tap_action:
+          action: toggle
+        title: null
+        type: image
+      - conditions:
+          - entity: input_boolean.sony_bravia_tv
+            state: 'on'
+        elements:
+          - image: /local/livingroom_tv_on.png
+            style:
+              left: 30.31%
+              cursor: default
+              top: 37.9%
+              width: 10%
+            type: image
+          - filter: opacity(45%)
+            image: /local/loader.svg
+            style:
+              left: 33%
+              cursor: default
+              top: 33.6%
+              width: 3.5%
+            type: image
+
+        type: conditional
+
+      #################################################################
+      #                                                               #
+      #                          PLAYSTATION                          #
+      #                                                               #
+      #################################################################
+
+      - entity: switch.playstation_template
+        hold_action: !include popup/livingroom_playstation.yaml
+        state_image:
+          'off': /local/livingroom_playstation_off.gif
+          'on': /local/livingroom_playstation_on.gif
+          playing: /local/livingroom_playstation_on.gif
+          standby: /local/livingroom_playstation_off.gif
+          unavailable: /local/unknown.png
+          unknown: /local/unknown.png
+        style:
+          left: 41.31%
+          top: 37.9%
+          width: 10%
+        tap_action:
+          action: call-service
+          service: switch.toggle
+          service_data:
+            entity_id: switch.playstation_template
+        title: null
+        type: image
+      - conditions:
+          - entity: input_boolean.playstation_template
+            state: 'on'
+        elements:
+          - filter: opacity(45%)
+            image: /local/loader.svg
+            style:
+              left: 44%
+              cursor: default
+              top: 34.2%
+              width: 3.5%
+            type: image
+        type: conditional
+      - conditions:
+          - entity: input_boolean.playstation_template
+            state: 'on'
+        elements:
+          - entity: input_boolean.playstation_template
+            state_image:
+              'off': /local/livingroom_playstation_off.gif
+              'on': /local/livingroom_playstation_on.gif
+            style:
+              left: 41.31%
+              cursor: default
+              top: 37.9%
+              width: 10%
+            type: image
+          - filter: opacity(45%)
+            image: /local/loader.svg
+            style:
+              left: 44%
+              cursor: default
+              top: 33.6%
+              width: 3.5%
+            type: image
+        type: conditional
+
+      #############################################################################################################################################
+      #                                                                                                                                           #
+      #                                                                  STUDIO                                                                   #
+      #                                                                                                                                           #
+      #############################################################################################################################################
+
+      #################################################################
+      #                                                               #
+      #                          DATORLAMPA                           #
+      #                                                               #
+      #################################################################
+
+      - entity: light.datorlampa
+        state_image:
+          'off': /local/studio_datorlampa_off.png
+          'on': /local/studio_datorlampa_on.png
+          unavailable: /local/unknown.png
+        style:
+          left: 55.18%
+          top: 20.35%
+          width: 10%
+        type: image
+      - conditions:
+          - entity: light.datorlampa
+            state_not: unavailable
+        elements:
+          - entity: light.datorlampa
+            icon: 'bha:hue-bulb'
+            style:
+              '--iron-icon-height': 1.87vw
+              '--iron-icon-width': 1.87vw
+              left: 52.19%
+              top: 15.55%
+            type: state-icon
+        type: conditional
+      - conditions:
+          - entity: light.datorlampa
+            state: 'on'
+        elements:
+          - entity: sensor.datorlampa_percent
+            fill: '#FFFFFF10'
+            font_style:
+              color: '#7d7e80'
+              font-size: 1.0vw
+              font-weight: 400
+              margin-left: '-0.8%'
+              margin-top: 1.9%
+            gradient: true
+            max: 100
+            min: 0
+            stroke_color: '#aaabad'
+            stroke_width: 6
+            style:
+              height: 3.15vw
+              left: 57.65%
+              opacity: 0.7
+              top: 16.3%
+              width: 3.15vw
+            type: 'custom:circle-sensor-card'
+            units: '%'
+        type: conditional
+      - hold_action: !include popup/studio_datorlampa.yaml
+        image: /local/overlay.svg
+        style:
+          left: 55.18%
+          opacity: 0
+          top: 20.35%
+          width: 10%
+        tap_action:
+          action: call-service
+          service: light.toggle
+          service_data:
+            entity_id: light.datorlampa
+        title: null
+        type: image
+
+      #################################################################
+      #                                                               #
+      #                          TAKLAMPOR                            #
+      #                                                               #
+      #################################################################
+
+      - entity: light.taklampor
+        state_image:
+          'off': /local/studio_taklampor_off.png
+          'on': /local/studio_taklampor_on.png
+          unavailable: /local/unknown.png
+        style:
+          left: 66.14%
+          top: 20.35%
+          width: 10%
+        type: image
+      - conditions:
+          - entity: light.taklampor
+            state_not: unavailable
+        elements:
+          - entity: light.taklampor
+            icon: 'bha:spot'
+            style:
+              '--iron-icon-height': 2.4vw
+              '--iron-icon-width': 2.4vw
+              left: 63.51%
+              top: 17.1%
+            type: state-icon
+        type: conditional
+      - conditions:
+          - entity: light.taklampor
+            state: 'on'
+        elements:
+          - entity: sensor.taklampor_percent
+            fill: '#FFFFFF10'
+            font_style:
+              color: '#7d7e80'
+              font-size: 1.0vw
+              font-weight: 400
+              margin-left: '-0.8%'
+              margin-top: 1.9%
+            gradient: true
+            max: 100
+            min: 0
+            stroke_color: '#aaabad'
+            stroke_width: 6
+            style:
+              height: 3.15vw
+              left: 68.5%
+              opacity: 0.7
+              top: 16.3%
+              width: 3.15vw
+            type: 'custom:circle-sensor-card'
+            units: '%'
+        type: conditional
+      - hold_action: !include popup/studio_taklampor.yaml
+        image: /local/overlay.svg
+        style:
+          left: 66.14%
+          opacity: 0
+          top: 20.35%
+          width: 10%
+        tap_action:
+          action: call-service
+          service: light.toggle
+          service_data:
+            entity_id: light.taklampor
+        title: null
+        type: image
+
+      #################################################################
+      #                                                               #
+      #                             DATOR                             #
+      #                                                               #
+      #################################################################
+
+      - entity: switch.dator_template
+        hold_action: !include popup/studio_dator.yaml
+        state_image:
+          'off': /local/studio_dator_off.gif
+          'on': /local/studio_dator_on.png
+          unavailable: /local/unknown.png
+        style:
+          left: 55.18%
+          top: 37.9%
+          width: 10%
+        tap_action:
+          action: toggle
+        title: null
+        type: image
+      - conditions:
+          - entity: input_boolean.dator_template
+            state: 'on'
+        elements:
+          - image: /local/studio_dator_on.png
+            style:
+              left: 55.18%
+              cursor: default
+              top: 37.9%
+              width: 10%
+            type: image
+          - filter: opacity(45%)
+            image: /local/loader.svg
+            style:
+              left: 57.8%
+              cursor: default
+              top: 33.6%
+              width: 3.5%
+            type: image
+        type: conditional
+      - type: conditional
+        conditions:
+          - entity: input_boolean.lock_computer
+            state: 'on'
+        elements:
+          - icon: 'mdi:lock-alert'
+            style:
+              '--iron-icon-height': 2.2vw
+              '--iron-icon-width': 2.2vw
+              color: '#6e818a60'
+              left: 57.65%
+              top: 33.58%
+            tap_action:
+              action: none
+            title: null
+            type: icon
+
+      #################################################################
+      #                                                               #
+      #                           MONITORER                           #
+      #                                                               #
+      #################################################################
+
+      - entity: switch.wemo_monitorer
+        hold_action: !include popup/studio_monitorer.yaml
+        state_image:
+          'off': /local/studio_monitorer_off.gif
+          'on': /local/studio_monitorer_on.gif
+          unavailable: /local/unknown.png
+        style:
+          left: 66.14%
+          top: 37.9%
+          width: 10%
+        tap_action:
+          action: toggle
+        title: null
+        type: image
+
+      #############################################################################################################################################
+      #                                                                                                                                           #
+      #                                                                  SOVRUM                                                                   #
+      #                                                                                                                                           #
+      #############################################################################################################################################
+
+      #################################################################
+      #                                                               #
+      #                         MATTIAS LIGHT                         #
+      #                                                               #
+      #################################################################
+
+      - entity: light.mattias
+        state_image:
+          'off': /local/sovrum_mattias_off.png
+          'on': /local/sovrum_mattias_on.png
+          unavailable: /local/unknown.png
+        style:
+          left: 80.05%
+          top: 20.35%
+          width: 10%
+        type: image
+      - conditions:
+          - entity: light.mattias
+            state_not: unavailable
+        elements:
+          - entity: light.mattias
+            icon: 'bha:sovrum'
+            style:
+              '--iron-icon-height': 1.9vw
+              '--iron-icon-width': 1.9vw
+              left: 76.95%
+              top: 15.1%
+            type: state-icon
+        type: conditional
+      - conditions:
+          - entity: light.mattias
+            state: 'on'
+        elements:
+          - entity: sensor.mattias_percent
+            fill: '#FFFFFF10'
+            font_style:
+              color: '#7d7e80'
+              font-size: 1.0vw
+              font-weight: 400
+              margin-left: '-0.8%'
+              margin-top: 1.9%
+            gradient: true
+            max: 100
+            min: 0
+            stroke_color: '#aaabad'
+            stroke_width: 6
+            style:
+              height: 3.15vw
+              left: 82.5%
+              opacity: 0.7
+              top: 16.3%
+              width: 3.15vw
+            type: 'custom:circle-sensor-card'
+            units: '%'
+        type: conditional
+      - hold_action: !include popup/sovrum_mattias.yaml
+        image: /local/overlay.svg
+        style:
+          left: 80.05%
+          opacity: 0
+          top: 20.35%
+          width: 10%
+        tap_action:
+          action: call-service
+          service: light.toggle
+          service_data:
+            entity_id: light.mattias
+        title: null
+        type: image
+
+      #################################################################
+      #                                                               #
+      #                          SANJA LIGHT                          #
+      #                                                               #
+      #################################################################
+
+      - entity: light.sanja
+        state_image:
+          'off': /local/sovrum_sanja_off.png
+          'on': /local/sovrum_sanja_on.png
+          unavailable: /local/unknown.png
+        style:
+          left: 91.05%
+          top: 20.35%
+          width: 10%
+        type: image
+      - conditions:
+          - entity: light.sanja
+            state_not: unavailable
+        elements:
+          - entity: light.sanja
+            icon: 'bha:sovrum'
+            style:
+              '--iron-icon-height': 1.9vw
+              '--iron-icon-width': 1.9vw
+              left: 88%
+              top: 15.1%
+            type: state-icon
+        type: conditional
+      - conditions:
+          - entity: light.sanja
+            state: 'on'
+        elements:
+          - entity: sensor.sanja_percent
+            fill: '#FFFFFF10'
+            font_style:
+              color: '#7d7e80'
+              font-size: 1.0vw
+              font-weight: 400
+              margin-left: '-0.8%'
+              margin-top: 1.9%
+            gradient: true
+            max: 100
+            min: 0
+            stroke_color: '#aaabad'
+            stroke_width: 6
+            style:
+              height: 3.15vw
+              left: 93.5%
+              opacity: 0.7
+              top: 16.3%
+              width: 3.15vw
+            type: 'custom:circle-sensor-card'
+            units: '%'
+        type: conditional
+      - hold_action: !include popup/sovrum_sanja.yaml
+        image: /local/overlay.svg
+        style:
+          left: 91.05%
+          opacity: 0
+          top: 20.35%
+          width: 10%
+        tap_action:
+          action: call-service
+          service: light.toggle
+          service_data:
+            entity_id: light.sanja
+        title: null
+        type: image
+
+      #################################################################
+      #                                                               #
+      #                              FAN                              #
+      #                                                               #
+      #################################################################
+
+      - entity: switch.wemo_flakt
+        hold_action: !include popup/sovrum_flakt.yaml
+        state_image:
+          'off': /local/sovrum_flakt_off.gif
+          'on': /local/sovrum_flakt_on.gif
+          unavailable: /local/unknown.png
+        style:
+          left: 80.05%
+          top: 37.9%
+          width: 10%
+        tap_action:
+          action: toggle
+        title: null
+        type: image
+
+      #################################################################
+      #                                                               #
+      #                              TV2                              #
+      #                                                               #
+      #################################################################
+
+      - entity: switch.tv2_template
+        hold_action: !include popup/sovrum_tv2.yaml
+        state_image:
+          'off': /local/sovrum_tv2_off.png
+          'on': /local/sovrum_tv2_on.png
+        style:
+          left: 91.05%
+          top: 37.9%
+          width: 10%
+        tap_action:
+          action: toggle
+        title: null
+        type: image
+      - conditions:
+          - entity: input_boolean.samsung_6_series_50
+            state: 'on'
+        elements:
+          - image: /local/sovrum_tv2_on.png
+            style:
+              left: 91.05%
+              cursor: default
+              top: 37.9%
+              width: 10%
+            type: image
+          - filter: opacity(45%)
+            image: /local/loader.svg
+            style:
+              left: 93.8%
+              cursor: default
+              top: 33.6%
+              width: 3.5%
+            type: image
+        type: conditional
+
+      #############################################################################################################################################
+      #                                                                                                                                           #
+      #                                                                  MEDIA                                                                    #
+      #                                                                                                                                           #
+      #############################################################################################################################################
+
+      - image: /local/overlay.svg
+        # temp_fix
+        style:
+          left: 27%
+          top: 54%
+          width: 3.5%
+          cursor: default
+        tap_action:
+          action: toggle
+        title: null
+        type: image
+      - cards:
+          - type: picture-elements
+            image: /local/overlay.svg
+            style: |
+              ha-card {
+                {% set text_off = '#6a6d6e' %}
+                {% set text_on = '#e1e1e1' %}
+                {% set shadow_off = '1px 1px 1px rgba(0,0,0,0.05)' %}
+                {% set shadow_on = '1px 1px 5px rgba(18,22,23,0.9)' %}
+                {% set overlay_off = '0' %}
+                {% set overlay_on = '1.0' %}
+                {% set icon_off = '0.1' %}
+                {% set icon_on = '1.0' %}
+                --plexrecent-active-text: {{text_on}};
+                --plexrecent-active-shadow: {{shadow_on}};
+                --plexrecent-text-overlay: {{overlay_on}};
+                --plexrecent-icon-opacity: {{icon_on}};
+                --livingroom-active-text: {% if is_state('sensor.apple_tv_livingroom_status', 'Av') %}{{text_off}}{% else %}{{text_on}}{% endif %};
+                --livingroom-active-shadow: {% if is_state('sensor.apple_tv_livingroom_status', 'Av') %}{{shadow_off}}{% else %}{{shadow_on}}{% endif %};
+                --livingroom-text-overlay: {% if is_state('sensor.apple_tv_livingroom_status', 'Av') %}{{overlay_off}}{% else %}{{overlay_on}}{% endif %};
+                --livingroom-icon-opacity: {% if is_state('sensor.apple_tv_livingroom_status', 'Av') %}{{icon_off}}{% else %}{{icon_on}}{% endif %};
+                --sovrum-active-text: {% if is_state('sensor.apple_tv_sovrum_status', 'Av') %}{{text_off}}{% else %}{{text_on}}{% endif %};
+                --sovrum-active-shadow: {% if is_state('sensor.apple_tv_sovrum_status', 'Av') %}{{shadow_off}}{% else %}{{shadow_on}}{% endif %};
+                --sovrum-text-overlay: {% if is_state('sensor.apple_tv_sovrum_status', 'Av') %}{{overlay_off}}{% else %}{{overlay_on}}{% endif %};
+                --sovrum-icon-opacity: {% if is_state('sensor.apple_tv_sovrum_status', 'Av') %}{{icon_off}}{% else %}{{icon_on}}{% endif %};
+                --playstation-active-text: {% if is_state('media_player.playstation_4', 'standby') %}{{text_off}}{% else %}{{text_on}}{% endif %};
+                --playstation-active-shadow: {% if is_state('media_player.playstation_4', 'standby') %}{{shadow_off}}{% else %}{{shadow_on}}{% endif %};
+                --playstation-text-overlay: {% if is_state('media_player.playstation_4', 'standby') %}{{overlay_off}}{% else %}{{overlay_on}}{% endif %};
+                --playstation-icon-opacity: {% if is_state('media_player.playstation_4', 'standby') %}{{icon_off}}{% else %}{{icon_on}}{% endif %};
+                --googlenest-active-text: {% if is_state('media_player.google_nest_mini', 'off') %}{{text_off}}{% else %}{{text_on}}{% endif %};
+                --googlenest-active-shadow: {% if is_state('media_player.google_nest_mini', 'off') %}{{shadow_off}}{% else %}{{shadow_on}}{% endif %};
+                --googlenest-text-overlay: {% if is_state('media_player.google_nest_mini', 'off') %}{{overlay_off}}{% else %}{{overlay_on}}{% endif %};
+                --googlenest-icon-opacity: {% if is_state('media_player.google_nest_mini', 'off') %}{{icon_off}}{% else %}{{icon_on}}{% endif %};
+              }
+            elements:
+
+              #################################################################
+              #                                                               #
+              #                   RECENTLY DOWNLOADED PLEX                    #
+              #                                                               #
+              #################################################################
+
+              - conditions:
+                  - entity: input_select.conditional_media
+                    state: 'Senast nedladdat'
+                elements:
+                  - accent_color: none
+                    all_shadows: false
+                    border_color: none
+                    entity: sensor.plex_recently_added
+                    image_style: fanart
+                    flag: false
+                    line1_text: $empty
+                    line2_text: $empty
+                    line3_text: $empty
+                    line4_text: $empty
+                    max: 1
+                    title_text: $empty
+                    style:
+                      '--ha-card-background': none
+                      '--ha-card-box-shadow': none
+                      height: 1px
+                      left: -36%
+                      padding: 0
+                      top: -3%
+                      width: 360%
+                    type: 'custom:upcoming-media-card'
+                  - image: /local/media_plex.svg
+                    style:
+                      left: 13.3%
+                      top: 12.85%
+                      width: 15%
+                      shape-rendering: optimizeSpeed
+                      opacity: 'var(--plexrecent-icon-opacity)'
+                    tap_action:
+                      action: none
+                    hold_action:
+                      action: none
+                    title: null
+                    type: image
+                  - image: /local/media_overlay_large.svg
+                    style:
+                      left: 50%
+                      top: 50%
+                      width: 100%
+                      opacity: 'var(--plexrecent-text-overlay)'
+                    tap_action:
+                      action: none
+                    type: image
+                  - entity: sensor.placeholder
+                    hold_action:
+                      action: none
+                    prefix: Senast Nedladdat
+                    style:
+                      color: 'var(--plexrecent-active-text)'
+                      font-family: Roboto
+                      font-size: 1.29vw
+                      font-weight: 400
+                      left: 2%
+                      max-width: 1px
+                      letter-spacing: 0.031vw
+                      top: 84.8%
+                      text-shadow: 'var(--plexrecent-active-shadow)'
+                      text-rendering: optimizeLegibility
+                      font-smoothing: none
+                      cursor: default
+                    tap_action:
+                      action: none
+                    type: state-label
+                  - entity: sensor.plex_title_truncate
+                    hold_action:
+                      action: none
+                    style:
+                      color: 'var(--plexrecent-active-text)'
+                      font-family: Roboto
+                      font-size: 1.29vw
+                      font-weight: 400
+                      left: 2%
+                      max-width: 1px
+                      top: 92.5%
+                      letter-spacing: 0.031vw
+                      text-rendering: optimizeLegibility
+                      font-smoothing: none
+                      cursor: default
+                      text-shadow: 'var(--plexrecent-active-shadow)'
+                    tap_action:
+                      action: none
+                    type: state-label
+                type: conditional
+              - conditions:
+                  - entity: input_select.conditional_media
+                    state_not: 'Senast nedladdat'
+                elements:
+                  - image: /local/media_background_large.svg
+                    style:
+                      top: 50%
+                      left: 50%
+                      width: 100%
+                      z-index: -3
+                    tap_action:
+                      action: none
+                    hold_action:
+                      action: none
+                    title: null
+                    type: image
+                type: conditional
+
+              #################################################################
+              #                                                               #
+              #              MEDIA PLAYER // APPLE TV livingroom              #
+              #                                                               #
+              #################################################################
+              - conditions:
+                  - entity: input_select.conditional_media
+                    state: 'livingroom'
+                elements:
+                  - artwork: full-cover-fit
+                    entity: media_player.livingroom
+                    hide:
+                      controls: true
+                      power: true
+                      volume: true
+                      icon: true
+                      name: true
+                      info: true
+                      progress: true
+                    tap_action: none
+                    style:
+                      '--ha-card-background': none
+                      '--ha-card-border-radius': 0.75vw
+                      '--ha-card-box-shadow': none
+                      height: 1px
+                      left: 50%
+                      padding: 0
+                      top: 0%
+                      width: 100%
+                      z-index: -2
+                    type: 'custom:mini-media-player'
+                  - image: /local/media_appletv1.svg
+                    style:
+                      left: 13.3%
+                      top: 12.85%
+                      width: 15%
+                      shape-rendering: optimizeSpeed
+                      opacity: 'var(--livingroom-icon-opacity)'
+                    tap_action:
+                      action: none
+                    hold_action:
+                      action: none
+                    title: null
+                    type: image
+                  - image: /local/media_overlay_large.svg
+                    style:
+                      left: 50%
+                      top: 50%
+                      width: 100%
+                      opacity: 'var(--livingroom-text-overlay)'
+                    tap_action:
+                      action: none
+                    type: image
+                  - entity: sensor.placeholder
+                    hold_action:
+                      action: none
+                    prefix: Apple Tv - livingroom
+                    style:
+                      color: 'var(--livingroom-active-text)'
+                      font-family: Roboto
+                      font-size: 1.29vw
+                      font-weight: 400
+                      left: 2%
+                      max-width: 1px
+                      letter-spacing: 0.031vw
+                      top: 84.8%
+                      text-shadow: 'var(--livingroom-active-shadow)'
+                      text-rendering: optimizeLegibility
+                      font-smoothing: none
+                      cursor: default
+                    tap_action:
+                      action: none
+                    type: state-label
+                  - entity: sensor.apple_tv_livingroom_title_truncate
+                    hold_action:
+                      action: none
+                    style:
+                      color: 'var(--livingroom-active-text)'
+                      font-family: Roboto
+                      font-size: 1.29vw
+                      font-weight: 400
+                      left: 2%
+                      max-width: 1px
+                      top: 92.5%
+                      letter-spacing: 0.031vw
+                      text-rendering: optimizeLegibility
+                      font-smoothing: none
+                      cursor: default
+                      text-shadow: 'var(--livingroom-active-shadow)'
+                    tap_action:
+                      action: none
+                    type: state-label
+                  - conditions:
+                      - entity: sensor.apple_tv_livingroom_status
+                        state_not: 'Av'
+                    elements:
+                      - entity: switch.media_play_pause_livingroom
+                        hold_action:
+                          action: none
+                        state_image:
+                          'off': /local/mediaplay.gif
+                          'on': /local/mediapause.gif
+                        style:
+                          left: 50%
+                          top: 50%
+                          width: 20%
+                          filter: 'drop-shadow(0px 0px 10px #11151790)'
+                        tap_action:
+                          action: toggle
+                        title: null
+                        type: image
+                    type: conditional
+                type: conditional
+
+              #################################################################
+              #                                                               #
+              #                MEDIA PLAYER // APPLE TV SOVRUM                #
+              #                                                               #
+              #################################################################
+
+              - conditions:
+                  - entity: input_select.conditional_media
+                    state: 'Sovrum'
+                elements:
+                  - artwork: full-cover-fit
+                    entity: media_player.sovrum
+                    hide:
+                      controls: true
+                      power: true
+                      volume: true
+                      icon: true
+                      name: true
+                      info: true
+                      progress: true
+                    tap_action: none
+                    style:
+                      '--ha-card-background': none
+                      '--ha-card-border-radius': 0.75vw
+                      '--ha-card-box-shadow': none
+                      height: 1px
+                      left: 50%
+                      padding: 0
+                      top: 0%
+                      width: 100%
+                      z-index: -2
+                    type: 'custom:mini-media-player'
+                  - image: /local/media_appletv1.svg
+                    style:
+                      left: 13.3%
+                      top: 12.85%
+                      width: 15%
+                      shape-rendering: optimizeSpeed
+                      opacity: 'var(--sovrum-icon-opacity)'
+                    tap_action:
+                      action: none
+                    hold_action:
+                      action: none
+                    title: null
+                    type: image
+                  - image: /local/media_overlay_large.svg
+                    style:
+                      left: 50%
+                      top: 50%
+                      width: 100%
+                      opacity: 'var(--sovrum-text-overlay)'
+                    tap_action:
+                      action: none
+                    type: image
+                  - entity: sensor.placeholder
+                    hold_action:
+                      action: none
+                    prefix: Apple Tv - Sovrum
+                    style:
+                      color: 'var(--sovrum-active-text)'
+                      font-family: Roboto
+                      font-size: 1.29vw
+                      font-weight: 400
+                      left: 2%
+                      max-width: 1px
+                      letter-spacing: 0.031vw
+                      top: 84.8%
+                      text-shadow: 'var(--sovrum-active-shadow)'
+                      text-rendering: optimizeLegibility
+                      font-smoothing: none
+                      cursor: default
+                    tap_action:
+                      action: none
+                    type: state-label
+                  - entity: sensor.apple_tv_sovrum_title_truncate
+                    hold_action:
+                      action: none
+                    style:
+                      color: 'var(--sovrum-active-text)'
+                      font-family: Roboto
+                      font-size: 1.29vw
+                      font-weight: 400
+                      left: 2%
+                      max-width: 1px
+                      top: 92.5%
+                      letter-spacing: 0.031vw
+                      text-rendering: optimizeLegibility
+                      font-smoothing: none
+                      cursor: default
+                      text-shadow: 'var(--sovrum-active-shadow)'
+                    tap_action:
+                      action: none
+                    type: state-label
+                  - conditions:
+                      - entity: sensor.apple_tv_sovrum_status
+                        state_not: 'Av'
+                    elements:
+                      - entity: switch.media_play_pause_sovrum
+                        hold_action:
+                          action: none
+                        state_image:
+                          'off': /local/mediaplay.gif
+                          'on': /local/mediapause.gif
+                        style:
+                          left: 50%
+                          top: 50%
+                          width: 20%
+                          filter: 'drop-shadow(0px 0px 10px #11151790)'
+                        tap_action:
+                          action: toggle
+                        title: null
+                        type: image
+                    type: conditional
+                type: conditional
+
+              #################################################################
+              #                                                               #
+              #                 MEDIA PLAYER // PLAYSTATION 4                 #
+              #                                                               #
+              #################################################################
+
+              - conditions:
+                  - entity: input_select.conditional_media
+                    state: 'Playstation 4'
+                elements:
+                  - artwork: full-cover-fit
+                    entity: media_player.playstation_4
+                    hide:
+                      controls: true
+                      power: true
+                      volume: true
+                      icon: true
+                      name: true
+                      info: true
+                      progress: true
+                      source: true
+                    tap_action: none
+                    style:
+                      '--ha-card-background': none
+                      '--ha-card-border-radius': 0.75vw
+                      '--ha-card-box-shadow': none
+                      height: 1px
+                      left: 50%
+                      padding: 0
+                      top: 0%
+                      width: 100%
+                      z-index: -2
+                    type: 'custom:mini-media-player'
+                  - image: /local/media_playstation.svg
+                    style:
+                      left: 13.3%
+                      top: 12.85%
+                      width: 15%
+                      shape-rendering: optimizeSpeed
+                      opacity: 'var(--playstation-icon-opacity)'
+                    tap_action:
+                      action: none
+                    hold_action:
+                      action: none
+                    title: null
+                    type: image
+                  - image: /local/media_overlay_large.svg
+                    style:
+                      left: 50%
+                      top: 50%
+                      width: 100%
+                      opacity: 'var(--playstation-text-overlay)'
+                    tap_action:
+                      action: none
+                    type: image
+                  - entity: sensor.placeholder
+                    hold_action:
+                      action: none
+                    prefix: Playstation 4
+                    style:
+                      color: 'var(--playstation-active-text)'
+                      font-family: Roboto
+                      font-size: 1.29vw
+                      font-weight: 400
+                      left: 2%
+                      max-width: 1px
+                      letter-spacing: 0.031vw
+                      top: 84.8%
+                      text-shadow: 'var(--playstation-active-shadow)'
+                      text-rendering: optimizeLegibility
+                      font-smoothing: none
+                      cursor: default
+                    tap_action:
+                      action: none
+                    type: state-label
+                  - entity: sensor.playstation_title_truncate
+                    hold_action:
+                      action: none
+                    style:
+                      color: 'var(--playstation-active-text)'
+                      font-family: Roboto
+                      font-size: 1.29vw
+                      font-weight: 400
+                      left: 2%
+                      max-width: 1px
+                      top: 92.5%
+                      letter-spacing: 0.031vw
+                      text-rendering: optimizeLegibility
+                      font-smoothing: none
+                      cursor: default
+                      text-shadow: 'var(--playstation-active-shadow)'
+                    tap_action:
+                      action: none
+                    type: state-label
+                  - conditions:
+                      - entity: media_player.playstation_4
+                        state_not: 'standby'
+                    elements:
+                      - entity: switch.media_play_pause_playstation_4
+                        hold_action:
+                          action: none
+                        state_image:
+                          'off': /local/mediaplay.gif
+                          'on': /local/mediapause.gif
+                        style:
+                          left: 50%
+                          top: 50%
+                          width: 20%
+                          filter: 'drop-shadow(0px 0px 10px #11151790)'
+                        tap_action:
+                          action: toggle
+                        title: null
+                        type: image
+                    type: conditional
+                type: conditional
+
+              #################################################################
+              #                                                               #
+              #               MEDIA PLAYER // GOOGLE NEST MINI                #
+              #                                                               #
+              #################################################################
+
+              - conditions:
+                  - entity: input_select.conditional_media
+                    state: 'Google Nest Mini'
+                elements:
+                  - artwork: full-cover-fit
+                    entity: media_player.google_nest_mini
+                    hide:
+                      controls: true
+                      power: true
+                      volume: true
+                      icon: true
+                      name: true
+                      info: true
+                      progress: true
+                    tap_action: none
+                    style:
+                      '--ha-card-background': none
+                      '--ha-card-border-radius': 0.75vw
+                      '--ha-card-box-shadow': none
+                      height: 1px
+                      left: 50%
+                      padding: 0
+                      top: 0%
+                      width: 100%
+                      z-index: -2
+                    type: 'custom:mini-media-player'
+                  - image: /local/media_googlenest.svg
+                    style:
+                      left: 13.3%
+                      top: 12.85%
+                      width: 15%
+                      shape-rendering: optimizeSpeed
+                      opacity: 'var(--googlenest-icon-opacity)'
+                    tap_action:
+                      action: none
+                    hold_action:
+                      action: none
+                    title: null
+                    type: image
+                  - image: /local/media_overlay_large.svg
+                    style:
+                      left: 50%
+                      top: 50%
+                      width: 100%
+                      opacity: 'var(--googlenest-text-overlay)'
+                    tap_action:
+                      action: none
+                    type: image
+                  - entity: sensor.placeholder
+                    hold_action:
+                      action: none
+                    prefix: Google Nest Mini
+                    style:
+                      color: 'var(--googlenest-active-text)'
+                      font-family: Roboto
+                      font-size: 1.29vw
+                      font-weight: 400
+                      left: 2%
+                      max-width: 1px
+                      letter-spacing: 0.031vw
+                      top: 84.8%
+                      text-shadow: 'var(--googlenest-active-shadow)'
+                      text-rendering: optimizeLegibility
+                      font-smoothing: none
+                      cursor: default
+                    tap_action:
+                      action: none
+                    type: state-label
+                  - entity: sensor.google_nest_mini_title_truncate
+                    hold_action:
+                      action: none
+                    style:
+                      color: 'var(--googlenest-active-text)'
+                      font-family: Roboto
+                      font-size: 1.29vw
+                      font-weight: 400
+                      left: 2%
+                      max-width: 1px
+                      top: 92.5%
+                      letter-spacing: 0.031vw
+                      text-rendering: optimizeLegibility
+                      font-smoothing: none
+                      cursor: default
+                      text-shadow: 'var(--googlenest-active-shadow)'
+                    tap_action:
+                      action: none
+                    type: state-label
+                  - conditions:
+                      - entity: media_player.google_nest_mini
+                        state_not: 'off'
+                    elements:
+                      - entity: switch.media_play_pause_google_nest_mini
+                        hold_action:
+                          action: none
+                        state_image:
+                          'off': /local/mediaplay.gif
+                          'on': /local/mediapause.gif
+                        style:
+                          left: 50%
+                          top: 50%
+                          width: 20%
+                          filter: 'drop-shadow(0px 0px 10px #11151790)'
+                        tap_action:
+                          action: toggle
+                        title: null
+                        type: image
+                    type: conditional
+                type: conditional
+
+      #################################################################
+      #                                                               #
+      #                      SMALL MEDIA CONTROLS                     #
+      #                                                               #
+      #################################################################
+
+          - type: picture-elements
+            image: /local/overlay.svg
+            style: |
+              ha-card {
+                {% set text_off = '#6a6d6e' %}
+                {% set text_on = '#e1e1e1' %}
+                {% set shadow_off = '1px 1px 1px rgba(0,0,0,0.05)' %}
+                {% set shadow_on = '1px 1px 5px rgba(18,22,23,0.9)' %}
+                {% set overlay_off = '0' %}
+                {% set overlay_on = '1.0' %}
+                {% set icon_off = '0.1' %}
+                {% set icon_on = '1.0' %}
+                --livingroom-active-text: {% if is_state('sensor.apple_tv_livingroom_status', 'Av') %}{{text_off}}{% else %}{{text_on}}{% endif %};
+                --livingroom-active-shadow: {% if is_state('sensor.apple_tv_livingroom_status', 'Av') %}{{shadow_off}}{% else %}{{shadow_on}}{% endif %};
+                --livingroom-text-overlay: {% if is_state('sensor.apple_tv_livingroom_status', 'Av') %}{{overlay_off}}{% else %}{{overlay_on}}{% endif %};
+                --livingroom-icon-opacity: {% if is_state('sensor.apple_tv_livingroom_status', 'Av') %}{{icon_off}}{% else %}{{icon_on}}{% endif %};
+                --sovrum-active-text: {% if is_state('sensor.apple_tv_sovrum_status', 'Av') %}{{text_off}}{% else %}{{text_on}}{% endif %};
+                --sovrum-active-shadow: {% if is_state('sensor.apple_tv_sovrum_status', 'Av') %}{{shadow_off}}{% else %}{{shadow_on}}{% endif %};
+                --sovrum-text-overlay: {% if is_state('sensor.apple_tv_sovrum_status', 'Av') %}{{overlay_off}}{% else %}{{overlay_on}}{% endif %};
+                --sovrum-icon-opacity: {% if is_state('sensor.apple_tv_sovrum_status', 'Av') %}{{icon_off}}{% else %}{{icon_on}}{% endif %};
+                --playstation-active-text: {% if is_state('media_player.playstation_4', 'standby') %}{{text_off}}{% else %}{{text_on}}{% endif %};
+                --playstation-active-shadow: {% if is_state('media_player.playstation_4', 'standby') %}{{shadow_off}}{% else %}{{shadow_on}}{% endif %};
+                --playstation-text-overlay: {% if is_state('media_player.playstation_4', 'standby') %}{{overlay_off}}{% else %}{{overlay_on}}{% endif %};
+                --playstation-icon-opacity: {% if is_state('media_player.playstation_4', 'standby') %}{{icon_off}}{% else %}{{icon_on}}{% endif %};
+                --googlenest-active-text: {% if is_state('media_player.google_nest_mini', 'off') %}{{text_off}}{% else %}{{text_on}}{% endif %};
+                --googlenest-active-shadow: {% if is_state('media_player.google_nest_mini', 'off') %}{{shadow_off}}{% else %}{{shadow_on}}{% endif %};
+                --googlenest-text-overlay: {% if is_state('media_player.google_nest_mini', 'off') %}{{overlay_off}}{% else %}{{overlay_on}}{% endif %};
+                --googlenest-icon-opacity: {% if is_state('media_player.google_nest_mini', 'off') %}{{icon_off}}{% else %}{{icon_on}}{% endif %};
+              }
+            elements:
+              - image: /local/media_background_s.svg
+                style:
+                  top: 50%
+                  left: 50%
+                  width: 100%
+                  z-index: -3
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                title: null
+                type: image
+
+      #################################################################
+      #                                                               #
+      #                   SMALL APPLE TV livingroom                   #
+      #                                                               #
+      #################################################################
+
+              - image: /local/media_appletv1.svg
+                style:
+                  left: 11%
+                  top: 11%
+                  width: 12.5%
+                  shape-rendering: optimizeSpeed
+                  opacity: 'var(--livingroom-icon-opacity)'
+                  z-index: -2
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                title: null
+                type: image
+              - artwork: full-cover-fit
+                entity: media_player.livingroom
+                hide:
+                  controls: true
+                  power: true
+                  volume: true
+                  icon: true
+                  name: true
+                  info: true
+                  progress: true
+                tap_action: none
+                style:
+                  '--ha-card-background': none
+                  '--ha-card-border-radius': 0.75vw
+                  '--ha-card-box-shadow': none
+                  height: 1px
+                  left: 23.85%
+                  padding: 0
+                  top: 0%
+                  width: 47.4%
+                  z-index: -1
+                type: 'custom:mini-media-player'
+              - image: /local/media_overlay_small.svg
+                hold_action:
+                  action: none
+                style:
+                  left: 23.7%
+                  top: 23.7%
+                  width: 100%
+                  opacity: 'var(--livingroom-text-overlay)'
+                tap_action:
+                  action: none
+                type: image
+              - entity: sensor.placeholder
+                hold_action:
+                  action: none
+                prefix: livingroom
+                style:
+                  color: 'var(--livingroom-active-text)'
+                  font-family: Roboto
+                  font-size: 1.29vw
+                  font-weight: 400
+                  left: 2%
+                  max-width: 1px
+                  top: 31.95%
+                  letter-spacing: 0.031vw
+                  text-shadow: 'var(--livingroom-active-shadow)'
+                  text-rendering: optimizeLegibility
+                  font-smoothing: none
+                  cursor: default
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: sensor.apple_tv_livingroom_status
+                hold_action:
+                  action: none
+                style:
+                  color: 'var(--livingroom-active-text)'
+                  font-family: Roboto
+                  font-size: 1.29vw
+                  font-weight: 400
+                  left: 2%
+                  max-width: 1px
+                  top: 39.8%
+                  letter-spacing: 0.031vw
+                  text-shadow: 'var(--livingroom-active-shadow)'
+                  text-rendering: optimizeLegibility
+                  font-smoothing: none
+                  cursor: default
+                tap_action:
+                  action: none
+                type: state-label
+
+      #################################################################
+      #                                                               #
+      #                     SMALL APPLE TV SOVRUM                     #
+      #                                                               #
+      #################################################################
+
+              - image: /local/media_appletv1.svg
+                style:
+                  left: 63%
+                  top: 11%
+                  width: 12.5%
+                  shape-rendering: optimizeSpeed
+                  opacity: 'var(--sovrum-icon-opacity)'
+                  z-index: -2
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                title: null
+                type: image
+              - artwork: full-cover-fit
+                entity: media_player.sovrum
+                hide:
+                  controls: true
+                  power: true
+                  volume: true
+                  icon: true
+                  name: true
+                  info: true
+                  progress: true
+                tap_action: none
+                style:
+                  '--ha-card-background': none
+                  '--ha-card-border-radius': 0.75vw
+                  '--ha-card-box-shadow': none
+                  height: 1px
+                  left: 76.3%
+                  padding: 0
+                  top: 0%
+                  width: 47.4%
+                  z-index: -1
+                type: 'custom:mini-media-player'
+              - image: /local/media_overlay_small.svg
+                hold_action:
+                  action: none
+                style:
+                  left: 76.2%
+                  top: 23.7%
+                  width: 100%
+                  opacity: 'var(--sovrum-text-overlay)'
+                tap_action:
+                  action: none
+                type: image
+              - entity: sensor.placeholder
+                hold_action:
+                  action: none
+                prefix: Sovrum
+                style:
+                  color: 'var(--sovrum-active-text)'
+                  font-family: Roboto
+                  font-size: 1.29vw
+                  font-weight: 400
+                  left: 54.5%
+                  max-width: 1px
+                  top: 31.95%
+                  letter-spacing: 0.031vw
+                  text-shadow: 'var(--sovrum-active-shadow)'
+                  text-rendering: optimizeLegibility
+                  font-smoothing: none
+                  cursor: default
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: sensor.apple_tv_sovrum_status
+                hold_action:
+                  action: none
+                style:
+                  color: 'var(--sovrum-active-text)'
+                  font-family: Roboto
+                  font-size: 1.29vw
+                  font-weight: 400
+                  left: 54.5%
+                  max-width: 1px
+                  top: 39.8%
+                  letter-spacing: 0.031vw
+                  text-shadow: 'var(--sovrum-active-shadow)'
+                  text-rendering: optimizeLegibility
+                  font-smoothing: none
+                  cursor: default
+                tap_action:
+                  action: none
+                type: state-label
+
+      #################################################################
+      #                                                               #
+      #                     SMALL PLAYSTATION 4                       #
+      #                                                               #
+      #################################################################
+
+              - image: /local/media_playstation.svg
+                style:
+                  left: 11%
+                  top: 64%
+                  width: 12.5%
+                  shape-rendering: optimizeSpeed
+                  opacity: 'var(--playstation-icon-opacity)'
+                  z-index: -2
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                title: null
+                type: image
+              - artwork: full-cover-fit
+                entity: media_player.playstation_4
+                hide:
+                  controls: true
+                  power: true
+                  volume: true
+                  icon: true
+                  name: true
+                  info: true
+                  source: true
+                  progress: true
+                tap_action: none
+                style:
+                  '--ha-card-background': none
+                  '--ha-card-border-radius': 0.75vw
+                  '--ha-card-box-shadow': none
+                  height: 1px
+                  left: 23.85%
+                  padding: 0
+                  top: 52.8%
+                  width: 47.4%
+                  z-index: -1
+                type: 'custom:mini-media-player'
+              - image: /local/media_overlay_small.svg
+                hold_action:
+                  action: none
+                style:
+                  left: 23.7%
+                  top: 76.5%
+                  width: 100%
+                  opacity: 'var(--playstation-text-overlay)'
+                tap_action:
+                  action: none
+                type: image
+              - entity: sensor.placeholder
+                hold_action:
+                  action: none
+                prefix: Playstation
+                style:
+                  color: 'var(--playstation-active-text)'
+                  font-family: Roboto
+                  font-size: 1.29vw
+                  font-weight: 400
+                  left: 2%
+                  max-width: 1px
+                  top: 84.8%
+                  letter-spacing: 0.031vw
+                  text-shadow: 'var(--playstation-active-shadow)'
+                  text-rendering: optimizeLegibility
+                  font-smoothing: none
+                  cursor: default
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: sensor.playstation_status
+                hold_action:
+                  action: none
+                style:
+                  color: 'var(--playstation-active-text)'
+                  font-family: Roboto
+                  font-size: 1.29vw
+                  font-weight: 400
+                  left: 2%
+                  max-width: 1px
+                  top: 92.5%
+                  letter-spacing: 0.031vw
+                  text-shadow: 'var(--playstation-active-shadow)'
+                  text-rendering: optimizeLegibility
+                  font-smoothing: none
+                  cursor: default
+                tap_action:
+                  action: none
+                type: state-label
+
+      #################################################################
+      #                                                               #
+      #                     SMALL GOOGLE NEST MINI                    #
+      #                                                               #
+      #################################################################
+
+              - image: /local/media_googlenest.svg
+                style:
+                  left: 63%
+                  top: 64%
+                  width: 12.5%
+                  shape-rendering: optimizeSpeed
+                  opacity: 'var(--googlenest-icon-opacity)'
+                  z-index: -2
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                title: null
+                type: image
+              - artwork: full-cover-fit
+                entity: media_player.google_nest_mini
+                hide:
+                  controls: true
+                  power: true
+                  volume: true
+                  icon: true
+                  name: true
+                  info: true
+                  progress: true
+                tap_action: none
+                style:
+                  '--ha-card-background': none
+                  '--ha-card-border-radius': 0.75vw
+                  '--ha-card-box-shadow': none
+                  height: 1px
+                  left: 76.3%
+                  padding: 0
+                  top: 52.8%
+                  width: 47.4%
+                  z-index: -1
+                type: 'custom:mini-media-player'
+              - image: /local/media_overlay_small.svg
+                hold_action:
+                  action: none
+                style:
+                  left: 76.2%
+                  top: 76.5%
+                  width: 100%
+                  opacity: 'var(--googlenest-text-overlay)'
+                tap_action:
+                  action: none
+                type: image
+              - entity: sensor.placeholder
+                hold_action:
+                  action: none
+                prefix: Google Nest
+                style:
+                  color: 'var(--googlenest-active-text)'
+                  font-family: Roboto
+                  font-size: 1.29vw
+                  font-weight: 400
+                  left: 54.5%
+                  max-width: 1px
+                  top: 84.8%
+                  letter-spacing: 0.031vw
+                  text-shadow: 'var(--googlenest-active-shadow)'
+                  text-rendering: optimizeLegibility
+                  font-smoothing: none
+                  cursor: default
+                tap_action:
+                  action: none
+                type: state-label
+              - entity: sensor.google_nest_mini_status
+                hold_action:
+                  action: none
+                style:
+                  color: 'var(--googlenest-active-text)'
+                  font-family: Roboto
+                  font-size: 1.29vw
+                  font-weight: 400
+                  left: 54.5%
+                  max-width: 1px
+                  top: 92.5%
+                  letter-spacing: 0.031vw
+                  text-shadow: 'var(--googlenest-active-shadow)'
+                  text-rendering: optimizeLegibility
+                  font-smoothing: none
+                  cursor: default
+                tap_action:
+                  action: none
+                type: state-label
+              - conditions:
+                  - entity: sensor.apple_tv_livingroom_status
+                    state_not: 'Av'
+                elements:
+                  - image: /local/overlay.svg
+                    hold_action:
+                      action: none
+                    style:
+                      left: 23.7%
+                      top: 23.8%
+                      width: 47.5%
+                    tap_action:
+                      action: call-service
+                      service: media_player.media_play_pause
+                      service_data:
+                        entity_id: media_player.livingroom
+                    title: null
+                    type: image
+                type: conditional
+              - conditions:
+                  - entity: sensor.apple_tv_sovrum_status
+                    state_not: 'Av'
+                elements:
+                  - image: /local/overlay.svg
+                    hold_action:
+                      action: none
+                    style:
+                      left: 76.3%
+                      top: 23.8%
+                      width: 47.5%
+                    tap_action:
+                      action: call-service
+                      service: media_player.media_play_pause
+                      service_data:
+                        entity_id: media_player.sovrum
+                    title: null
+                    type: image
+                type: conditional
+              - conditions:
+                  - entity: media_player.playstation_4
+                    state_not: 'standby'
+                elements:
+                  - image: /local/overlay.svg
+                    hold_action:
+                      action: none
+                    style:
+                      left: 23.7%
+                      top: 76.5%
+                      width: 47.5%
+                    tap_action:
+                      action: call-service
+                      service: script.turn_on
+                      service_data:
+                        entity_id: script.media_ps4_ps_button
+                    title: null
+                    type: image
+                type: conditional
+              - conditions:
+                  - entity: media_player.google_nest_mini
+                    state_not: 'off'
+                elements:
+                  - image: /local/overlay.svg
+                    hold_action:
+                      action: none
+                    style:
+                      left: 76.2%
+                      top: 76.5%
+                      width: 47.5%
+                    tap_action:
+                      action: call-service
+                      service: media_player.media_play_pause
+                      service_data:
+                        entity_id: media_player.google_nest_mini
+                    title: null
+                    type: image
+                type: conditional
+
+        start_card: 1
+        parameters:
+          effect: 'coverflow'
+          speed: 450
+          spaceBetween: 10
+          threshold: 30
+          coverflowEffect:
+            rotate: 70
+            stretch: 0
+            depth: 300
+            modifier: 1
+            slideShadows : true
+        style:
+          '--ha-card-background': none
+          '--ha-card-border-radius': 0.75vw
+          '--ha-card-box-shadow': none
+          height: 1px
+          left: 35.8%
+          padding: 0
+          top: 56.6%
+          width: 20.95%
+          text-rendering: optimizeLegibility
+          font-smoothing: none
+        type: 'custom:swipe-card'
+
+      #############################################################################################################################################
+      #                                                                                                                                           #
+      #                                                                 LAMPOR                                                                    #
+      #                                                                                                                                           #
+      #############################################################################################################################################
+
+      #################################################################
+      #                                                               #
+      #                            BADRUM                             #
+      #                                                               #
+      #################################################################
+
+      - entity: light.badrum
+        state_image:
+          'off': /local/lampor_badrum_off.gif
+          'on': /local/lampor_badrum_on.png
+          unavailable: /local/unknown.png
+        style:
+          left: 55.18%
+          top: 64.5%
+          width: 10%
+        type: image
+      - conditions:
+          - entity: light.badrum
+            state: 'on'
+        elements:
+          - entity: sensor.badrum_percent
+            fill: '#FFFFFF10'
+            font_style:
+              color: '#7d7e80'
+              font-size: 1.0vw
+              font-weight: 400
+              margin-left: '-0.8%'
+              margin-top: 1.9%
+            gradient: true
+            max: 100
+            min: 0
+            stroke_color: '#aaabad'
+            stroke_width: 6
+            style:
+              height: 3.15vw
+              left: 57.65%
+              opacity: 0.7
+              top: 60.5%
+              width: 3.15vw
+            type: 'custom:circle-sensor-card'
+            units: '%'
+        type: conditional
+      - hold_action: !include popup/lampor_badrum.yaml
+        image: /local/overlay.svg
+        style:
+          left: 55.18%
+          opacity: 0
+          top: 64.5%
+          width: 10%
+        tap_action:
+          action: call-service
+          service: light.toggle
+          service_data:
+            entity_id: light.badrum
+        title: null
+        type: image
+
+      #################################################################
+      #                                                               #
+      #                             KÖK                               #
+      #                                                               #
+      #################################################################
+
+      - entity: light.kok
+        state_image:
+          'off': /local/lampor_kok_off.gif
+          'on': /local/lampor_kok_on.png
+          unavailable: /local/unknown.png
+        style:
+          left: 66.14%
+          top: 64.5%
+          width: 10%
+        type: image
+      - conditions:
+          - entity: light.kok
+            state: 'on'
+        elements:
+          - entity: sensor.kok_percent
+            fill: '#FFFFFF10'
+            font_style:
+              color: '#7d7e80'
+              font-size: 1.0vw
+              font-weight: 400
+              margin-left: '-0.8%'
+              margin-top: 1.9%
+            gradient: true
+            max: 100
+            min: 0
+            stroke_color: '#aaabad'
+            stroke_width: 6
+            style:
+              height: 3.15vw
+              left: 68.5%
+              opacity: 0.7
+              top: 60.9%
+              width: 3.15vw
+            type: 'custom:circle-sensor-card'
+            units: '%'
+        type: conditional
+      - hold_action: !include popup/lampor_kok.yaml
+        image: /local/overlay.svg
+        style:
+          left: 66.14%
+          opacity: 0
+          top: 64.5%
+          width: 10%
+        tap_action:
+          action: call-service
+          service: light.toggle
+          service_data:
+            entity_id: light.kok
+        title: null
+        type: image
+
+      #################################################################
+      #                                                               #
+      #                           GARDEROB                            #
+      #                                                               #
+      #################################################################
+
+      - entity: light.kladkammare_2
+        state_image:
+          'off': /local/lampor_garderob_off.gif
+          'on': /local/lampor_garderob_on.png
+          unavailable: /local/unknown.png
+        style:
+          left: 55.18%
+          top: 82.17%
+          width: 10%
+        type: image
+      - conditions:
+          - entity: light.kladkammare_2
+            state: 'on'
+        elements:
+          - entity: sensor.garderob_percent
+            fill: '#FFFFFF10'
+            font_style:
+              color: '#7d7e80'
+              font-size: 1.0vw
+              font-weight: 400
+              margin-left: '-0.8%'
+              margin-top: 1.9%
+            gradient: true
+            max: 100
+            min: 0
+            stroke_color: '#aaabad'
+            stroke_width: 6
+            style:
+              height: 3.15vw
+              left: 57.7%
+              opacity: 0.7
+              top: 78%
+              width: 3.15vw
+            type: 'custom:circle-sensor-card'
+            units: '%'
+        type: conditional
+      - hold_action: !include popup/lampor_garderob.yaml
+        image: /local/overlay.svg
+        style:
+          left: 55.18%
+          opacity: 0
+          top: 82.17%
+          width: 10%
+        tap_action:
+          action: call-service
+          service: light.toggle
+          service_data:
+            entity_id: light.kladkammare_2
+        title: null
+        type: image
+
+      #################################################################
+      #                                                               #
+      #                             HALL                              #
+      #                                                               #
+      #################################################################
+
+      - entity: light.hall
+        state_image:
+          'off': /local/lampor_hall_off.gif
+          'on': /local/lampor_hall_on.png
+          unavailable: /local/unknown.png
+        style:
+          left: 66.14%
+          top: 82.17%
+          width: 10%
+        type: image
+      - conditions:
+          - entity: light.hall
+            state: 'on'
+        elements:
+          - entity: sensor.hall_percent
+            fill: '#FFFFFF10'
+            font_style:
+              color: '#7d7e80'
+              font-size: 1.0vw
+              font-weight: 400
+              margin-left: '-0.8%'
+              margin-top: 1.9%
+            gradient: true
+            max: 100
+            min: 0
+            stroke_color: '#aaabad'
+            stroke_width: 6
+            style:
+              height: 3.15vw
+              left: 68.5%
+              opacity: 0.7
+              top: 78%
+              width: 3.15vw
+            type: 'custom:circle-sensor-card'
+            units: '%'
+        type: conditional
+      - hold_action: !include popup/lampor_hall.yaml
+        image: /local/overlay.svg
+        style:
+          left: 66.14%
+          opacity: 0
+          top: 82.17%
+          width: 10%
+        tap_action:
+          action: call-service
+          service: light.toggle
+          service_data:
+            entity_id: light.hall
+        title: null
+        type: image
+
+      #############################################################################################################################################
+      #                                                                                                                                           #
+      #                                                                 HEMMA                                                                     #
+      #                                                                                                                                           #
+      #############################################################################################################################################
+
+      #################################################################
+      #                                                               #
+      #                           MATTIAS                             #
+      #                                                               #
+      #################################################################
+
+      - entity: person.mattias
+        state_image:
+          home: /local/hemma_mattias_on.png
+          not_home: /local/hemma_mattias_off.png
+        style:
+          left: 80.05%
+          top: 64.5%
+          width: 10%
+        type: image
+      - conditions:
+          - entity: person.mattias
+            state: home
+        elements:
+          - entity: sensor.mattias_last_changed
+            fill: '#FFFFFF10'
+            font_style:
+              color: '#7d7e80'
+              font-size: 1.0vw
+              font-weight: 400
+              margin-left: '-0.8%'
+              margin-top: 1.9%
+            gradient: true
+            max: 100
+            min: 0
+            stroke_color: '#aaabad'
+            stroke_width: 6
+            style:
+              height: 3.15vw
+              left: 82.35%
+              opacity: 0.7
+              top: 60.8%
+              width: 3.15vw
+            type: 'custom:circle-sensor-card'
+        type: conditional
+      - conditions:
+          - entity: person.mattias
+            state: not_home
+        elements:
+          - entity: sensor.mattias_last_changed
+            fill: '#FFFFFF08'
+            font_style:
+              color: '#7d7e80'
+              font-size: 1.0vw
+              font-weight: 400
+              margin-left: '-0.8%'
+              margin-top: 1.9%
+            gradient: true
+            max: 100
+            min: 0
+            stroke_color: '#313638'
+            stroke_width: 6
+            style:
+              height: 3.15vw
+              left: 82.35%
+              opacity: 0.7
+              top: 60.8%
+              width: 3.15vw
+            type: 'custom:circle-sensor-card'
+        type: conditional
+      - hold_action: !include popup/hemma_mattias.yaml
+        image: /local/overlay.svg
+        style:
+          left: 80.05%
+          opacity: 0
+          top: 64.5%
+          width: 10%
+        tap_action:
+          action: none
+        title: null
+        type: image
+
+      #################################################################
+      #                                                               #
+      #                            SANJA                              #
+      #                                                               #
+      #################################################################
+
+      - entity: person.sanja
+        state_image:
+          home: /local/hemma_sanja_on.png
+          not_home: /local/hemma_sanja_off.png
+        style:
+          left: 91.05%
+          top: 64.5%
+          width: 10%
+        type: image
+      - conditions:
+          - entity: person.sanja
+            state: home
+        elements:
+          - entity: sensor.sanja_last_changed
+            fill: '#FFFFFF10'
+            font_style:
+              color: '#7d7e80'
+              font-size: 1.0vw
+              font-weight: 400
+              margin-left: '-0.8%'
+              margin-top: 1.9%
+            gradient: true
+            max: 100
+            min: 0
+            stroke_color: '#aaabad'
+            stroke_width: 6
+            style:
+              height: 3.15vw
+              left: 93.35%
+              opacity: 0.7
+              top: 60.8%
+              width: 3.15vw
+            type: 'custom:circle-sensor-card'
+        type: conditional
+      - conditions:
+          - entity: person.sanja
+            state: not_home
+        elements:
+          - entity: sensor.sanja_last_changed
+            fill: '#FFFFFF08'
+            font_style:
+              color: '#7d7e80'
+              font-size: 1.0vw
+              font-weight: 400
+              margin-left: '-0.8%'
+              margin-top: 1.9%
+            gradient: true
+            max: 100
+            min: 0
+            stroke_color: '#313638'
+            stroke_width: 6
+            style:
+              height: 3.15vw
+              left: 93.35%
+              opacity: 0.7
+              top: 60.8%
+              width: 3.15vw
+            type: 'custom:circle-sensor-card'
+        type: conditional
+      - hold_action: !include popup/hemma_sanja.yaml
+        image: /local/overlay.svg
+        style:
+          left: 91.05%
+          opacity: 0
+          top: 64.5%
+          width: 10%
+        tap_action:
+          action: none
+        title: null
+        type: image
+
+      #################################################################
+      #                                                               #
+      #                         STÄNG ALLT                            #
+      #                                                               #
+      #################################################################
+
+      - entity: switch.auto_stangallt_template
+        hold_action:
+          action: none
+        state_image:
+          'off': /local/auto_stang_allt_off.png
+          'on': /local/auto_stang_allt_on.gif
+        style:
+          left: 80.05%
+          top: 82.17%
+          width: 10%
+        tap_action:
+          action: toggle
+        title: null
+        type: image
+
+      #################################################################
+      #                                                               #
+      #                             HEMMA                             #
+      #                                                               #
+      #################################################################
+
+      - entity: switch.auto_hemma_template
+        hold_action: !include popup/hemma_data_kwh.yaml
+        state_image:
+          'off': /local/auto_hemma_off.png
+          'on': /local/auto_hemma_on.gif
+        style:
+          left: 91.05%
+          top: 82.17%
+          width: 10%
+        tap_action:
+          action: toggle
+        title: null
+        type: image
+
+    image: /local/uibg.png
+    type: picture-elements
+panel: true
+path: default_view
+title: Home

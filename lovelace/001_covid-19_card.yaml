@@ -1,0 +1,134 @@
+type: vertical-stack
+cards:
+- type: horizontal-stack
+  cards:
+    - type: 'custom:mini-graph-card'
+      name: COVID-19 Netherlands
+      icon: 'mdi:emoticon-neutral-outline'
+      entities:
+        - color: '#385581'
+          entity: sensor.netherlands_coronavirus_confirmed
+          name: Confirmed
+      line_width: 2.5
+      hour24: true
+      hours_to_show: 504
+      group_by: date
+      smoothing: false
+      show:
+        name_adaptive_color: true
+        graph: bar
+      tap_action:
+        action: none
+    - type: 'custom:mini-graph-card'
+      name: COVID-19 Netherlands
+      icon: mdi:emoticon-dead-outline
+      entities:
+        - color: '#940a0a'
+          entity: sensor.netherlands_coronavirus_deaths
+          name: Deaths
+      line_width: 2.5
+      hour24: true
+      hours_to_show: 504
+      group_by: date
+      smoothing: false
+      show:
+        name_adaptive_color: true
+        graph: bar
+      style: |
+        ha-card {
+          border-radius: 0;
+          background: none;
+          box-shadow: none;
+          margin-top: -3.5em;
+          margin-left: 0em;
+        }
+      tap_action:
+        action: none
+- type: horizontal-stack
+  cards:
+    - type: 'custom:mini-graph-card'
+      name: COVID-19 Ukraine
+      icon: 'mdi:emoticon-neutral-outline'
+      entities:
+        - color: '#385581'
+          entity: sensor.ukraine_coronavirus_confirmed
+          name: Confirmed
+      line_width: 2.5
+      hour24: true
+      hours_to_show: 504
+      group_by: date
+      smoothing: false
+      show:
+        name_adaptive_color: true
+        graph: bar
+      tap_action:
+        action: none
+    - type: 'custom:mini-graph-card'
+      name: COVID-19 Ukraine
+      icon: mdi:emoticon-dead-outline
+      entities:
+        - color: '#940a0a'
+          entity: sensor.ukraine_coronavirus_deaths
+          name: Deaths
+      line_width: 2.5
+      hour24: true
+      hours_to_show: 504
+      group_by: date
+      smoothing: false
+      show:
+        name_adaptive_color: true
+        graph: bar
+      style: |
+        ha-card {
+          border-radius: 0;
+          background: none;
+          box-shadow: none;
+          margin-top: -3.5em;
+          margin-left: 0em;
+        }
+      tap_action:
+        action: none
+- type: horizontal-stack
+  cards:
+  - type: 'custom:mini-graph-card'
+    name: COVID-19 Worldwide
+    icon: 'mdi:emoticon-neutral-outline'
+    entities:
+      - color: '#385581'
+        entity: sensor.worldwide_coronavirus_confirmed
+        name: Confirmed
+    line_width: 2.5
+    hour24: true
+    hours_to_show: 504
+    group_by: date
+    smoothing: false
+    show:
+      name_adaptive_color: true
+      graph: bar
+    tap_action:
+      action: none
+  - type: 'custom:mini-graph-card'
+    name: COVID-19 Worldwide
+    icon: mdi:emoticon-dead-outline
+    entities:
+      - color: '#940a0a'
+        entity: sensor.worldwide_coronavirus_deaths
+        name: Deaths
+    line_width: 2.5
+    hour24: true
+    hours_to_show: 504
+    group_by: date
+    smoothing: false
+    show:
+      name_adaptive_color: true
+      graph: bar
+    style: |
+      ha-card {
+        border-radius: 0;
+        background: none;
+        box-shadow: none;
+        margin-top: -3.5em;
+        margin-left: 0em;
+      }
+    tap_action:
+      action: none

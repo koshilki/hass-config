@@ -3,6 +3,7 @@ title: Home
 path: home
 # The cards to show on this view.
 cards:
+  - !include 001_covid-19_card.yaml
   - type: custom:layout-card
     layout: vertical
     cards:

@@ -12,10 +12,15 @@ resources:
     type: module
   - url: /local/community/popup-backdrop-filter/popup-backdrop-filter.js
     type: module
+  - url: /local/community/bar-card/bar-card.js
+    type: module
+  - url: /local/community/mini-graph-card/mini-graph-card-bundle.js
+    type: module
 
 views:
   - !include lovelace/00_home_view.yaml
   - !include lovelace/01_security_view.yaml
   - !include lovelace/02_climate_view.yaml
   - !include lovelace/03_maintenance_view.yaml
+  # - !include lovelace/04_experimental.yaml
 

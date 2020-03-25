@@ -6,6 +6,21 @@
     - precipitation
     - precipitation_forecast_average
     - precipitation_forecast_total
+
+- platform: qnap
+  host: !secret qnap_host
+  username: !secret qnap_username
+  password: !secret qnap_password
+  monitored_conditions:
+    - status
+    - cpu_usage
+    - memory_percent_used
+    - network_tx
+    - network_rx
+    - volume_percentage_used
+    - drive_smart_status
+    - drive_temp
+
 - platform: template
   sensors:
     washing_machine_status:
@@ -18,3 +33,9 @@
       attribute_templates:
         load_power: "{{ states.switch.laundry_washing_machine_plug.attributes.load_power }}"
         entity_picture: "/local/pictures/washer-{{ states('sensor.washing_machine_status') }}.jpg"
+
+    public_ip:
+        value_template: !secret public_ip
+
+    placeholder:
+        value_template: " "
