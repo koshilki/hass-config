@@ -23,7 +23,7 @@ cards:
       name: COVID-19 Netherlands
       icon: mdi:emoticon-dead-outline
       entities:
-        - color: '#940a0a'
+        - color: '#750a0a'
           entity: sensor.netherlands_coronavirus_deaths
           name: Deaths
       line_width: 2.5
@@ -67,7 +67,7 @@ cards:
       name: COVID-19 Ukraine
       icon: mdi:emoticon-dead-outline
       entities:
-        - color: '#940a0a'
+        - color: '#750a0a'
           entity: sensor.ukraine_coronavirus_deaths
           name: Deaths
       line_width: 2.5
@@ -111,7 +111,7 @@ cards:
     name: COVID-19 Worldwide
     icon: mdi:emoticon-dead-outline
     entities:
-      - color: '#940a0a'
+      - color: '#750a0a'
         entity: sensor.worldwide_coronavirus_deaths
         name: Deaths
     line_width: 2.5
