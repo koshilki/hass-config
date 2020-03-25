@@ -7,6 +7,9 @@
     - precipitation_forecast_average
     - precipitation_forecast_total
 
+- platform: dnsip
+  name: public_ip
+
 - platform: qnap
   host: !secret qnap_host
   username: !secret qnap_username
@@ -34,8 +37,86 @@
         load_power: "{{ states.switch.laundry_washing_machine_plug.attributes.load_power }}"
         entity_picture: "/local/pictures/washer-{{ states('sensor.washing_machine_status') }}.jpg"
 
-    public_ip:
-        value_template: !secret public_ip
+    hass_version_template:
+      friendly_name: Latest version
+      value_template: >-
+        {% if states('sensor.hass_version_installed') == states('sensor.hass_version_latest') %}
+          Yes
+        {% else %}
+          No - {{ states('sensor.hass_version_latest') }}
+        {% endif %}
+
+    hass_release_template:
+      entity_id: sensor.time
+      icon_template: 'mdi:update'
+      friendly_name_template: >-
+        {{ state_attr('calendar.home_assistant_devs','message') }}
+      value_template: >-
+        {% set dev = state_attr('calendar.home_assistant_devs', 'start_time') %}
+        {% if ((as_timestamp(dev) - as_timestamp(now())) / 86400) < 0 %}
+        Today {% else %}
+        {{ ((as_timestamp(dev) - as_timestamp(now())) / 86400) | int + 1 }} days
+        {% endif %}
+
+    day:
+      entity_id: sensor.date
+      value_template: >
+        {% set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
+        {{ days[now().weekday()] }}
+
+    date:
+      value_template: >
+        {% set months = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"] %}
+        {{ strptime(states('sensor.date'), '%Y-%m-%d').day }}
+        {{ months[now().month-1] }}
+
+    kirill_last_changed:
+      entity_id: sensor.time
+      value_template: >-
+        {%- set time = (as_timestamp(now()) -
+        as_timestamp(states.person.kirill.last_changed)) | int %}
+        {%- set minutes = ((time % 3600) // 60) %}
+        {%- set hours = ((time % 86400) // 3600) %}
+        {%- set days = (time // 86400) %}
+        {% if time <= 60 %} 0m
+        {% elif time <= 3600 %} {{ minutes }}m
+        {% elif time <= 86400 %} {{ hours }}h
+        {% elif time > 86400 %} {{ days }}d
+        {% endif %}
+
+    lena_last_changed:
+      entity_id: sensor.time
+      value_template: >-
+        {%- set time = (as_timestamp(now()) -
+        as_timestamp(states.person.lena.last_changed)) | int %}
+        {%- set minutes = ((time % 3600) // 60) %}
+        {%- set hours = ((time % 86400) // 3600) %}
+        {%- set days = (time // 86400) %}
+        {% if time <= 60 %} 0m
+        {% elif time <= 3600 %} {{ minutes }}m
+        {% elif time <= 86400 %} {{ hours }}h
+        {% elif time > 86400 %} {{ days }}d
+        {% endif %}
+
+    nas_disk_temp:
+      friendly_name: Disk temperature
+      unit_of_measurement: '°C'
+      icon_template: 'mdi:thermometer'
+      value_template: >
+        {{ (states('sensor.nas16063a_temperature_drive_0_1'), states('sensor.nas16063a_temperature_drive_0_2')) | max }}
+
+    nas_disk_smart_status:
+      friendly_name: S.M.A.R.T. status
+      icon_template: >
+        {% if states('sensor.nas_disk_smart_status') == 'OK' %} 'mdi:check-circle'
+        {% else %} 'mdi:alert-circle'
+        {% endif %}
+      value_template: >
+        {% if states('sensor.nas16063a_smart_status_drive_0_1') == 'OK' and states('sensor.nas16063a_smart_status_drive_0_2') == 'OK' %} OK
+        {% elif states('sensor.nas16063a_smart_status_drive_0_1') != 'OK' %} Drive 1 {{states('sensor.nas16063a_smart_status_drive_0_1')}}
+        {% elif states('sensor.nas16063a_smart_status_drive_0_2') != 'OK' %} Drive 2 {{states('sensor.nas16063a_smart_status_drive_0_2')}}
+        {% endif %}
 
     placeholder:
         value_template: " "
