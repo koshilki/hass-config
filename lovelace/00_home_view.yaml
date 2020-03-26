@@ -43,9 +43,9 @@ cards:
   - type: custom:layout-card
     layout: vertical
     cards:
-      - type: custom:mini-media-player
+      - type: media-control
         entity: media_player.living_room_speaker
-      - type: custom:mini-media-player
+      - type: media-control
         entity: media_player.mibox3
   - type: entities
     title: Switches

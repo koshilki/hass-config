@@ -92,3 +92,5 @@ media_player:
   - platform: androidtv
     name: MiBox 3
     host: !secret xiaomi_mibox3_ip
+    adb_server_ip: !secret hass_ip
+    adb_server_port: !secret adb_server_port
