@@ -89,3 +89,18 @@
         title: Vacuum cleaner
       data_template:
         message: '{{ trigger.to_state.state }}'
+
+- alias: 'Send notification when 3D print fails'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.anycubic_i3_mega_printing_error
+      to: 'on'
+  action:
+    - service: notify.notify
+      data:
+        title: 3D print error
+        message: 3D printer error
+    - service: persistent_notification.create
+      data:
+        title: 3D printer error
+        message: 3D printer error

@@ -128,5 +128,13 @@
         {% elif states('sensor.nas16063a_smart_status_drive_0_2') != 'OK' %} Drive 2 {{states('sensor.nas16063a_smart_status_drive_0_2')}}
         {% endif %}
 
+    anycubic_i3_mega_print_finish_at:
+      friendly_name: Anycubic i3 Mega Print finish time
+      icon_template: 'mdi:clock'
+      value_template: >
+        {% set remaining = states('sensor.anycubic_i3_mega_time_remaining') | int %}
+        {% set tnow = as_timestamp(now()) | int %}
+        {% set future_tstamp = (tnow + remaining) | timestamp_custom("%H:%M") %} {{ future_tstamp }}
+
     placeholder:
         value_template: " "

@@ -9,6 +9,7 @@ cards:
       - entity: automation.trigger_alarm_while_armed_away
       - entity: automation.send_notification_when_washing_machine_status_changes
       - entity: automation.send_notification_when_vacuum_cleaner_status_changes
+      - entity: automation.send_notification_when_3d_print_fails
 
   - type: entities
     title: "QNAP NAS"
@@ -66,12 +67,12 @@ cards:
         font-size: 0.95em
         font-weight: 400
       width: 50%
-      tap_action: service
-      service_options:
-        domain: homeassistant
-        service: update_entity
-        data:
-          entity_id: sensor.nas16063a_cpu_usage
+      # tap_action: service
+      # service_options:
+      #   domain: homeassistant
+      #   service: update_entity
+      #   data:
+      #     entity_id: sensor.nas16063a_cpu_usage
     - entity: sensor.nas16063a_memory_usage
       background_style:
         background: >-
@@ -112,20 +113,20 @@ cards:
         font-size: 0.95em
         font-weight: 400
       width: 50%
-      tap_action: service
-      service_options:
-        domain: homeassistant
-        service: update_entity
-        data:
-          entity_id: sensor.nas16063a_memory_usage
-    - background_style:
+      # tap_action: service
+      # service_options:
+      #   domain: homeassistant
+      #   service: update_entity
+      #   data:
+      #     entity_id: sensor.nas16063a_memory_usage
+    - entity: sensor.nas16063a_volume_used_datavol1
+      background_style:
         background: >-
           radial-gradient(circle, rgba(45,45,45,1) 0%,
           rgba(0,0,0,1) 100%)
       card_style:
         background: '#FFFFFF00'
         box-shadow: none
-      entity: sensor.nas16063a_volume_used_datavol1
       height: 2.1em
       icon: 'mdi:harddisk'
       icon_position: left
@@ -161,12 +162,12 @@ cards:
         font-size: 0.95em
         font-weight: 400
       width: 50%
-      tap_action: service
-      service_options:
-        domain: homeassistant
-        service: update_entity
-        data:
-          entity_id: sensor.nas16063a_volume_used_datavol1
+      # tap_action: service
+      # service_options:
+      #   domain: homeassistant
+      #   service: update_entity
+      #   data:
+      #     entity_id: sensor.nas16063a_volume_used_datavol1
     - type: 'custom:mini-graph-card'
       entities:
         - color: green
@@ -194,3 +195,56 @@ cards:
         }
       tap_action:
         action: none
+
+  - type: entities
+    title: "HP OfficeJet 3830"
+    entities:
+      - sensor.hp_printer_inkcartridge_black
+      - sensor.hp_printer_inkcartridge_cyanmagentayellow
+      - sensor.hp_printer_printer
+      - sensor.hp_printer_scanner
+      - sensor.hp_printer_status
+      - binary_sensor.hp_printer_status
+
+  - type: entities
+    title: "Anycubic i3 Mega"
+    entities:
+      - entity: sensor.anycubic_i3_mega_current_state
+        name: Printer status
+      - entity: sensor.anycubic_i3_mega_actual_tool0_temp
+        name: Hotend temperature
+      - entity: sensor.anycubic_i3_mega_actual_bed_temp
+        name: Heated bed temperature
+      - entity: sensor.anycubic_i3_mega_job_percentage
+        title: Print progress
+        type: 'custom:bar-card'
+        background_style:
+          background: >-
+            radial-gradient(circle, rgba(45,45,45,1) 0%,
+            rgba(0,0,0,1) 100%)
+        card_style:
+          background: '#FFFFFF00'
+          box-shadow: none
+        height: 2.1em
+        icon_position: left
+        icon_style:
+          color: '#5F6267'
+          margin-left: '-0.7em'
+          filter: none
+        max: 100
+        min: 0
+        rounding: 0.3em
+        title_style:
+          color: '#e0e1e1'
+          margin-left: 0.95em
+        # value_style:
+        #   color: '#e0e1e1'
+        #   font-size: 0.95em
+        #   font-weight: 400
+        width: 50%
+      # - binary_sensor.anycubic_i3_mega_printing
+      # - sensor.anycubic_i3_mega_target_bed_temp
+      # - sensor.anycubic_i3_mega_target_tool0_temp
+      # - sensor.anycubic_i3_mega_time_elapsed
+      - entity: sensor.anycubic_i3_mega_print_finish_at
+        name: Finished at

@@ -94,3 +94,10 @@ media_player:
     host: !secret xiaomi_mibox3_ip
     adb_server_ip: !secret hass_ip
     adb_server_port: !secret adb_server_port
+
+octoprint:
+  host: !secret octopi_ip
+  api_key: !secret octopi_api_key
+  name: Anycubic i3 Mega
+  bed: true
+  number_of_tools: 1
