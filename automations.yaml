@@ -104,3 +104,19 @@
       data:
         title: 3D printer error
         message: 3D printer error
+
+- alias: 'Send notification when 3D print finished'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.anycubic_i3_mega_printing
+      to: 'off'
+  condition:
+    - condition: and
+      conditions:
+      - condition: template
+        value_template: '{{ trigger.from_state.state != trigger.to_state.state }}'
+  action:
+    - service: notify.notify
+      data:
+        title: 3D print finished
+        message: 3D printer finished

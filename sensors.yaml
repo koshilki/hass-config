@@ -17,6 +17,10 @@
 - platform: dnsip
   name: public_ip
 
+- platform: filesize
+  file_paths:
+    - /config/home-assistant.log
+
 - platform: qnap
   host: !secret qnap_host
   username: !secret qnap_username
@@ -134,7 +138,7 @@
       value_template: >
         {% set remaining = states('sensor.anycubic_i3_mega_time_remaining') | int %}
         {% set tnow = as_timestamp(now()) | int %}
-        {% set future_tstamp = (tnow + remaining) | timestamp_custom("%H:%M") %} {{ future_tstamp }}
+        {% set future_tstamp = (tnow + remaining) | timestamp_custom("%d-%m-%y %H:%M") %} {{ future_tstamp }}
 
     placeholder:
         value_template: " "

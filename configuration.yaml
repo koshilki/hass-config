@@ -22,6 +22,8 @@ sensor: !include sensors.yaml
 
 homeassistant:
   customize: !include customize.yaml
+  whitelist_external_dirs:
+    - /config
 
 recorder:
   db_url: !secret db_url
@@ -101,3 +103,12 @@ octoprint:
   name: Anycubic i3 Mega
   bed: true
   number_of_tools: 1
+
+shell_command:
+  # Setup on macos
+  # System Preferences > Sharing > Remote Login
+  # ssh root@hassio.local
+  # ssh-keygen
+  # /config/.ssh/id_rsa
+  # ssh-copy-id -i /config/.ssh/id_rsa USER@XXX.XXX.X.X
+  restart_hass_docker: !secret restart_hass_docker

@@ -3,6 +3,40 @@ path: maintenance
 icon: mdi:home-analytics
 cards:
   - type: entities
+    title: " ‍  ‍ Home Assistant Core"
+    show_header_toggle: false
+    style: |
+      ha-card {
+        box-shadow: none;
+        border-radius: 1em;
+        background: rgba(36, 42, 43, 0.88);
+        padding-right: 0.7em;
+      }
+    entities:
+    - entity: sensor.hass_version_installed
+      icon: 'mdi:home-assistant'
+      name: Installed version
+    - entity: sensor.hass_version_template
+      icon: 'mdi:update'
+    - entity: sensor.hass_release_template
+      icon: 'mdi:dev-to'
+    - entity: sensor.home_assistant_log
+      icon: 'mdi:file-document'
+      name: Log file size
+    # - type: 'custom:button-entity-row'
+    #   buttons:
+    #     - icon: 'mdi:reload'
+    #       name: Home Assistant
+    #       service: script.turn_on
+    #       service_data:
+    #         entity_id: script.homeassistant_restart
+    #       style:
+    #         background: '#FFFFFF10'
+    #         border-radius: 0.7em
+    #         font-weight: 500
+    #         padding: 1.2em 1.5em 1.2em 1.2em
+
+  - type: entities
     title: Automations
     show_header_toggle: false
     entities:
@@ -12,7 +46,7 @@ cards:
       - entity: automation.send_notification_when_3d_print_fails
 
   - type: entities
-    title: "QNAP NAS"
+    title: QNAP TS-231P
     show_header_toggle: false
     style: |
       ha-card {
@@ -199,8 +233,66 @@ cards:
   - type: entities
     title: "HP OfficeJet 3830"
     entities:
-      - sensor.hp_printer_inkcartridge_black
-      - sensor.hp_printer_inkcartridge_cyanmagentayellow
+      - entity: sensor.hp_printer_inkcartridge_black
+        title: Inkcartridge Black
+        type: 'custom:bar-card'
+        background_style:
+          background: >-
+            radial-gradient(circle, rgba(45,45,45,1) 0%,
+            rgba(0,0,0,1) 100%)
+        card_style:
+          background: '#FFFFFF00'
+          box-shadow: none
+        height: 2.1em
+        icon_position: left
+        icon_style:
+          color: '#5F6267'
+          margin-left: '-0.7em'
+          filter: none
+        max: 100
+        min: 0
+        rounding: 0.3em
+        severity:
+        - value: 33
+          color: '#bf4040'
+        - value: 66
+          color: '#bf9540'
+        - value: 100
+          color: '#40bf40'
+        title_style:
+          color: '#e0e1e1'
+          margin-left: 0.95em
+        width: 50%
+      - entity: sensor.hp_printer_inkcartridge_cyanmagentayellow
+        title: Inkcartridge CMY
+        type: 'custom:bar-card'
+        background_style:
+          background: >-
+            radial-gradient(circle, rgba(45,45,45,1) 0%,
+            rgba(0,0,0,1) 100%)
+        card_style:
+          background: '#FFFFFF00'
+          box-shadow: none
+        height: 2.1em
+        icon_position: left
+        icon_style:
+          color: '#5F6267'
+          margin-left: '-0.7em'
+          filter: none
+        max: 100
+        min: 0
+        rounding: 0.3em
+        severity:
+        - value: 33
+          color: '#bf4040'
+        - value: 66
+          color: '#bf9540'
+        - value: 100
+          color: '#40bf40'
+        title_style:
+          color: '#e0e1e1'
+          margin-left: 0.95em
+        width: 50%
       - sensor.hp_printer_printer
       - sensor.hp_printer_scanner
       - sensor.hp_printer_status
@@ -242,9 +334,5 @@ cards:
         #   font-size: 0.95em
         #   font-weight: 400
         width: 50%
-      # - binary_sensor.anycubic_i3_mega_printing
-      # - sensor.anycubic_i3_mega_target_bed_temp
-      # - sensor.anycubic_i3_mega_target_tool0_temp
-      # - sensor.anycubic_i3_mega_time_elapsed
       - entity: sensor.anycubic_i3_mega_print_finish_at
         name: Finished at

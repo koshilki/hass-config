@@ -18,6 +18,8 @@ resources:
     type: module
   - url: /local/community/mini-media-player/mini-media-player-bundle.js
     type: module
+  - url: /local/community/button-entity-row/button-entity-row.js
+    type: module
 
 views:
   - !include lovelace/00_home_view.yaml

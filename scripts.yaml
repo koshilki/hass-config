@@ -1,0 +1,7 @@
+homeassistant_restart:
+  sequence:
+    - service: browser_mod.toast
+      data:
+        duration: 16000
+        message: 'Starting om Home Assistant...'
+    - service: shell_command.restart_hass_docker
