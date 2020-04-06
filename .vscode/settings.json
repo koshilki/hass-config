@@ -1,0 +1,24 @@
+{
+  "files.associations": {
+    "*.yaml": "home-assistant"
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#0b6b94",
+    "activityBar.activeBorder": "#ff3d00",
+    "activityBar.foreground": "#074a67",
+    "activityBar.inactiveForeground": "#3b88a9",
+    "activityBarBadge.background": "#ff3d00",
+    "activityBarBadge.foreground": "#ffffff",
+    "titleBar.activeBackground": "#0b6b94",
+    "titleBar.activeForeground": "#0e1a27",
+    "titleBar.inactiveForeground": "#15202b99",
+    "statusBar.background": "#0b6b94",
+    "statusBarItem.hoverBackground": "#0b6b94",
+    "statusBar.foreground": "#05384e",
+    "panel.border": "#0b6b94",
+    "sideBar.border": "#0b6b94",
+    "editorGroup.border": "#0b6b94",
+    "tab.activeBorder": "#0b6b94"
+  },
+  "peacock.color": "#42b883"
+}
