@@ -1,0 +1,15 @@
+master_bedroom_windows:
+  name: Master bedroom windows
+  entities:
+    - binary_sensor.master_bedroom_window_1
+    - binary_sensor.master_bedroom_window_2
+study_windows:
+  name: Study windows
+  entities:
+    - binary_sensor.study_window_ne
+    - binary_sensor.study_window_sw
+living_room_windows:
+  name: Living room windows
+  entities:
+    - binary_sensor.back_door
+    - binary_sensor.kitchen_window

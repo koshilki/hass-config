@@ -23,18 +23,19 @@ cards:
       - entity: sensor.home_assistant_log
         icon: "mdi:file-document"
         name: Log file size
-  # - type: "custom:button-entity-row"
-  #   buttons:
-  #     - icon: "mdi:reload"
-  #       name: Home Assistant
-  #       service: script.turn_on
-  #       service_data:
-  #         entity_id: script.homeassistant_restart
-  #       style:
-  #         background: "#FFFFFF10"
-  #         border-radius: 0.7em
-  #         font-weight: 500
-  #         padding: 1.2em 1.5em 1.2em 1.2em
+
+    # - type: 'custom:button-entity-row'
+    #   buttons:
+    #     - icon: 'mdi:reload'
+    #       name: Home Assistant
+    #       service: script.turn_on
+    #       service_data:
+    #         entity_id: script.homeassistant_restart
+    #       style:
+    #         background: '#FFFFFF10'
+    #         border-radius: 0.7em
+    #         font-weight: 500
+    #         padding: 1.2em 1.5em 1.2em 1.2em
   - type: entities
     title: Automations
     show_header_toggle: false
@@ -43,13 +44,15 @@ cards:
       - entity: automation.send_notification_when_washing_machine_status_changes
       - entity: automation.send_notification_when_vacuum_cleaner_status_changes
       - entity: automation.send_notification_when_3d_print_fails
-      - entity: automation.turn_off_heating_when_the_window_is_open
 
   - type: entities
     title: QNAP TS-231P
     show_header_toggle: false
     style: |
       ha-card {
+        box-shadow: none;
+        border-radius: 1em;
+        background: rgba(36, 42, 43, 0.88);
         padding-right: 0.7em;
       }
     entities:
@@ -72,37 +75,28 @@ cards:
         severity:
           - from: 0
             to: 33
-            value: 33
             color: "#40bf40"
-          - from: 33
+          - from: 34
             to: 66
-            value: 66
             color: "#bf9540"
-          - from: 66
+          - from: 67
             to: 100
-            value: 100
             color: "#bf4040"
-        width: "45%"
+        width: 45%
         height: 2.1em
         style: |-
           ha-card {
             box-shadow: none;
-            margin: 0 -15px;
+            margin: -15px;
             background: rgba(0,0,0,0);
           }
           #states {
             padding: 0 0 0 15px;
-          }
           #states > * {
-            margin: 0px;
-            margin-bottom: 8px;
+            margin: 8px 0px;
           }
-          bar-card-value {
-            margin-right: auto;
-            font-size: 10px;
-            font-weight: bold;
-            text-shadow: 1px 1px #0005;
-            box-shadow: none;
+          bar-card-background	{
+            bar-card-background: none;
           }
       - entity: sensor.nas16063a_memory_usage
         name: Memory
@@ -118,15 +112,12 @@ cards:
         severity:
           - from: 0
             to: 33
-            value: 33
             color: "#bf4040"
           - from: 34
             to: 66
-            value: 66
             color: "#bf9540"
           - from: 67
             to: 100
-            value: 100
             color: "#40bf40"
         width: 45%
         height: 2.1em
@@ -164,15 +155,12 @@ cards:
         severity:
           - from: 0
             to: 33
-            value: 33
             color: "#40bf40"
           - from: 34
             to: 66
-            value: 66
             color: "#bf9540"
           - from: 67
             to: 100
-            value: 100
             color: "#bf4040"
         width: 45%
         height: 2.1em
@@ -243,41 +231,38 @@ cards:
         severity:
           - from: 0
             to: 33
-            value: 33
             color: "#bf4040"
           - from: 34
             to: 66
-            value: 66
             color: "#bf9540"
           - from: 67
             to: 100
-            value: 100
             color: "#40bf40"
         width: 45%
         height: 2.1em
-        style: |-
-          ha-card {
-            box-shadow: none;
-            margin: 0 -15px;
-            background: rgba(0,0,0,0)
-          }
-          #states {
-            padding: 0 8px 0 15px;
-          }
-          #states > * {
-            margin: 0px;
-            margin-bottom: 8px;
-          }
-          bar-card-background	{
-            bar-card-background: none;
-          }
-          bar-card-value {
-            margin-right: auto;
-            font-size: 10px;
-            font-weight: bold;
-            text-shadow: 1px 1px #0005;
-            box-shadow: none;
-          }
+        # style: |-
+        #   ha-card {
+        #     box-shadow: none;
+        #     margin: -15px;
+        #     background: rgba(0,0,0,0)
+        #   }
+        #   #states {
+        #     padding: 0 8px 0 15px;
+        #   }
+        #   #states > * {
+        #     margin: 0px;
+        #     margin-bottom: 8px;
+        #   }
+        #   bar-card-background	{
+        #     bar-card-background: none;
+        #   }
+        #   bar-card-value {
+        #     margin-right: auto;
+        #     font-size: 10px;
+        #     font-weight: bold;
+        #     text-shadow: 1px 1px #0005;
+        #     box-shadow: none;
+        #   }
       - entity: sensor.hp_printer_inkcartridge_cyanmagentayellow
         name: Inkcartridge CMY
         type: "custom:bar-card"
@@ -292,15 +277,12 @@ cards:
         severity:
           - from: 0
             to: 33
-            value: 33
             color: "#bf4040"
           - from: 34
             to: 66
-            value: 66
             color: "#bf9540"
           - from: 67
             to: 100
-            value: 100
             color: "#40bf40"
         width: 45%
         height: 2.1em
@@ -351,6 +333,16 @@ cards:
           title: outside
           value: inside
           minmax: "off"
+        severity:
+          - from: 0
+            to: 33
+            color: "#bf4040"
+          - from: 34
+            to: 66
+            color: "#bf9540"
+          - from: 67
+            to: 100
+            color: "#40bf40"
         width: 45%
         height: 2.1em
         style: |-

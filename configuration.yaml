@@ -1,10 +1,12 @@
-
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 # http:
 #   base_url: example.duckdns.org:8123
+
+# logger:
+#   default: notset
 
 # Text to speech
 tts:
@@ -30,6 +32,27 @@ recorder:
 
 lovelace:
   mode: yaml
+  resources:
+    - url: /local/community/monster-card/monster-card.js
+      type: js
+    - url: /local/community/multiple-entity-row/multiple-entity-row.js?v=2.2.0
+      type: module
+    - url: /local/community/lovelace-layout-card/layout-card.js
+      type: module
+    - url: /local/community/lovelace-xiaomi-vacuum-card/xiaomi-vacuum-card.js?v=3.0.1
+      type: module
+    - url: /local/community/popup-backdrop-filter/popup-backdrop-filter.js
+      type: module
+    - url: /local/community/bar-card/bar-card.js
+      type: module
+    - url: /local/community/mini-graph-card/mini-graph-card-bundle.js
+      type: module
+    - url: /local/community/button-entity-row/button-entity-row.js
+      type: module
+    - url: /local/community/lovelace-card-mod/card-mod.js
+      type: module
+    - url: /local/community/seventeen-track-card/seventeen-track-card.js
+      type: module
 
 mobile_app:
 
@@ -52,6 +75,9 @@ notify:
     vapid_pub_key: !secret vapid_pub_key
     vapid_prv_key: !secret vapid_prv_key
     vapid_email: !secret vapid_email
+  - platform: telegram
+    name: telegram_notifier
+    chat_id: !secret telegram_chat_id_kirill
 
 device_tracker:
   - platform: tado
@@ -112,3 +138,12 @@ shell_command:
   # /config/.ssh/id_rsa
   # ssh-copy-id -i /config/.ssh/id_rsa USER@XXX.XXX.X.X
   restart_hass_docker: !secret restart_hass_docker
+
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_bot_api_key
+    trusted_networks:
+      - 149.154.160.0/20
+      - 91.108.4.0/22
+    allowed_chat_ids:
+      - !secret telegram_chat_id_kirill

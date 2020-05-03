@@ -43,9 +43,9 @@ cards:
   - type: custom:layout-card
     layout: vertical
     cards:
-      - type: custom:mini-media-player
+      - type: media-control
         entity: media_player.living_room_speaker
-      - type: custom:mini-media-player
+      - type: media-control
         entity: media_player.mibox3
   - type: entities
     title: Switches
@@ -57,7 +57,6 @@ cards:
       - switch.study_workplace_plug
       - switch.living_room_tvzone_plug
       - switch.laundry_washing_machine_plug
-
-
-
-
+  - type: custom:seventeen-track-card
+    entity: sensor.seventeentrack_packages_in_transit
+    title: Packages tracking

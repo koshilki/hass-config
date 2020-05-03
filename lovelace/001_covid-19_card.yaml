@@ -16,7 +16,7 @@ cards:
       smoothing: false
       show:
         name_adaptive_color: true
-        graph: bar
+        # graph: bar
       tap_action:
         action: none
     - type: 'custom:mini-graph-card'
@@ -33,15 +33,7 @@ cards:
       smoothing: false
       show:
         name_adaptive_color: true
-        graph: bar
-      style: |
-        ha-card {
-          border-radius: 0;
-          background: none;
-          box-shadow: none;
-          margin-top: -3.5em;
-          margin-left: 0em;
-        }
+        # graph: bar
       tap_action:
         action: none
 - type: horizontal-stack
@@ -60,7 +52,7 @@ cards:
       smoothing: false
       show:
         name_adaptive_color: true
-        graph: bar
+        # graph: bar
       tap_action:
         action: none
     - type: 'custom:mini-graph-card'
@@ -77,15 +69,7 @@ cards:
       smoothing: false
       show:
         name_adaptive_color: true
-        graph: bar
-      style: |
-        ha-card {
-          border-radius: 0;
-          background: none;
-          box-shadow: none;
-          margin-top: -3.5em;
-          margin-left: 0em;
-        }
+        # graph: bar
       tap_action:
         action: none
 - type: horizontal-stack
@@ -104,7 +88,7 @@ cards:
     smoothing: false
     show:
       name_adaptive_color: true
-      graph: bar
+      # graph: bar
     tap_action:
       action: none
   - type: 'custom:mini-graph-card'
@@ -121,14 +105,6 @@ cards:
     smoothing: false
     show:
       name_adaptive_color: true
-      graph: bar
-    style: |
-      ha-card {
-        border-radius: 0;
-        background: none;
-        box-shadow: none;
-        margin-top: -3.5em;
-        margin-left: 0em;
-      }
+      # graph: bar
     tap_action:
       action: none

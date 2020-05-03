@@ -1,35 +1,35 @@
-- alias: 'Trigger alarm while armed away'
+- alias: "Trigger alarm while armed away"
   trigger:
     - platform: state
       entity_id: binary_sensor.back_door
-      to: 'on'
+      to: "on"
     - platform: state
       entity_id: binary_sensor.front_door
-      to: 'on'
+      to: "on"
     - platform: state
       entity_id: binary_sensor.kitchen_window
-      to: 'on'
+      to: "on"
     - platform: state
       entity_id: binary_sensor.daniil_s_room_window
-      to: 'on'
+      to: "on"
     - platform: state
-      entity_id: binary_sensor.mark_s_rom_window
-      to: 'on'
+      entity_id: binary_sensor.mark_s_room_window
+      to: "on"
     - platform: state
       entity_id: binary_sensor.master_bedroom_window_1
-      to: 'on'
+      to: "on"
     - platform: state
       entity_id: binary_sensor.master_bedroom_window_2
-      to: 'on'
+      to: "on"
     - platform: state
       entity_id: binary_sensor.study_window_ne
-      to: 'on'
+      to: "on"
     - platform: state
       entity_id: binary_sensor.study_window_sw
-      to: 'on'
+      to: "on"
     - platform: state
       entity_id: binary_sensor.living_room_motion
-      to: 'on'
+      to: "on"
   condition:
     - condition: or
       conditions:
@@ -59,8 +59,8 @@
   condition:
     - condition: and
       conditions:
-      - condition: template
-        value_template: '{{ trigger.from_state.state != trigger.to_state.state }}'
+        - condition: template
+          value_template: "{{ trigger.from_state.state != trigger.to_state.state }}"
   action:
     - service: notify.notify
       data:
@@ -73,7 +73,6 @@
           {% elif trigger.to_state.state == 'off' %}
             Finished washing program
           {% endif %}
-
 - alias: "Send notification when vacuum cleaner status changes"
   trigger:
     platform: state
@@ -81,20 +80,19 @@
   condition:
     - condition: and
       conditions:
-      - condition: template
-        value_template: '{{ trigger.from_state.state != trigger.to_state.state }}'
+        - condition: template
+          value_template: "{{ trigger.from_state.state != trigger.to_state.state }}"
   action:
     - service: notify.notify
       data:
         title: Vacuum cleaner
       data_template:
-        message: '{{ trigger.to_state.state }}'
-
-- alias: 'Send notification when 3D print fails'
+        message: "{{ trigger.to_state.state }}"
+- alias: "Send notification when 3D print fails"
   trigger:
     - platform: state
       entity_id: binary_sensor.anycubic_i3_mega_printing_error
-      to: 'on'
+      to: "on"
   action:
     - service: notify.notify
       data:
@@ -104,19 +102,43 @@
       data:
         title: 3D printer error
         message: 3D printer error
-
-- alias: 'Send notification when 3D print finished'
+- alias: "Send notification when 3D print finished"
   trigger:
     - platform: state
       entity_id: binary_sensor.anycubic_i3_mega_printing
-      to: 'off'
+      to: "off"
   condition:
     - condition: and
       conditions:
-      - condition: template
-        value_template: '{{ trigger.from_state.state != trigger.to_state.state }}'
+        - condition: template
+          value_template: "{{ trigger.from_state.state != trigger.to_state.state }}"
   action:
     - service: notify.notify
       data:
         title: 3D print finished
         message: 3D printer finished
+- alias: "Turn off heating when the window is open"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.front_door
+    - platform: state
+      entity_id: binary_sensor.daniil_s_room_window
+    - platform: state
+      entity_id: binary_sensor.mark_s_room_window
+    - platform: state
+      entity_id: group.master_bedroom_windows
+    - platform: state
+      entity_id: group.study_windows
+    - platform: state
+      entity_id: group.living_room_windows
+  action:
+    - service: climate.set_hvac_mode
+      # - service_template: "{{ 'climate.turn_' + ('off' if trigger.to_state.name == 'on' else 'on') }}"
+      data_template:
+        entity_id: "{{ 'climate.' + state_attr(trigger.to_state.domain + '.' + trigger.to_state.object_id, 'room') }}"
+        hvac_mode: >
+          {% if trigger.to_state.state == 'off' %}
+            auto
+          {% else %}
+            off
+          {% endif %}

@@ -1,3 +1,27 @@
 sensor.washing_machine_status:
   friendly_name: "Washing machine"
   icon: mdi:washing-machine
+binary_sensor.study_window_sw:
+  room: study
+binary_sensor.study_window_ne:
+  room: study
+binary_sensor.master_bedroom_window_1:
+  room: master_bedroom
+binary_sensor.master_bedroom_window_2:
+  room: master_bedroom
+binary_sensor.daniil_s_room_window:
+  room: daniil_s_room
+binary_sensor.mark_s_room_window:
+  room: mark_s_room
+binary_sensor.back_door:
+  room: living_room
+binary_sensor.kitchen_window:
+  room: living_room
+binary_sensor.front_door:
+  room: hallway
+group.study_windows:
+  room: study
+group.master_bedroom_windows:
+  room: master_bedroom
+group.living_room_windows:
+  room: living_room
