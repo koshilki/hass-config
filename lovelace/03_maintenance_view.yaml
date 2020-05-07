@@ -23,18 +23,11 @@ cards:
       - entity: sensor.home_assistant_log
         icon: "mdi:file-document"
         name: Log file size
-  # - type: "custom:button-entity-row"
-  #   buttons:
-  #     - icon: "mdi:reload"
-  #       name: Home Assistant
-  #       service: script.turn_on
-  #       service_data:
-  #         entity_id: script.homeassistant_restart
-  #       style:
-  #         background: "#FFFFFF10"
-  #         border-radius: 0.7em
-  #         font-weight: 500
-  #         padding: 1.2em 1.5em 1.2em 1.2em
+      - type: "custom:paper-buttons-row"
+        buttons:
+          - icon: "mdi:reload"
+            entity: script.homeassistant_restart
+            name: false
   - type: entities
     title: Automations
     show_header_toggle: false
@@ -66,7 +59,7 @@ cards:
         positions:
           icon: outside
           indicator: inside
-          title: outside
+          name: outside
           value: inside
           minmax: "off"
         severity:
@@ -104,6 +97,12 @@ cards:
             text-shadow: 1px 1px #0005;
             box-shadow: none;
           }
+          bar-card-name {
+            margin-left: 20px;
+          }
+          ha-icon {
+            margin-left: 5px;
+          }
       - entity: sensor.nas16063a_memory_usage
         name: Memory
         type: "custom:bar-card"
@@ -112,7 +111,7 @@ cards:
         positions:
           icon: outside
           indicator: inside
-          title: outside
+          name: outside
           value: inside
           minmax: "off"
         severity:
@@ -133,7 +132,7 @@ cards:
         style: |-
           ha-card {
             box-shadow: none;
-            margin: -15px;
+            margin: 8px -15px;
             background: rgba(0,0,0,0);
           }
           #states {
@@ -150,6 +149,12 @@ cards:
             text-shadow: 1px 1px #0005;
             box-shadow: none;
           }
+          bar-card-name {
+            margin-left: 20px;
+          }
+          ha-icon {
+            margin-left: 5px;
+          }
       - entity: sensor.nas16063a_volume_used_datavol1
         name: Storage
         type: "custom:bar-card"
@@ -158,7 +163,7 @@ cards:
         positions:
           icon: outside
           indicator: inside
-          title: outside
+          name: outside
           value: inside
           minmax: "off"
         severity:
@@ -179,7 +184,7 @@ cards:
         style: |-
           ha-card {
             box-shadow: none;
-            margin: -15px;
+            margin: 8px -15px;
             background: rgba(0,0,0,0)
           }
           #states {
@@ -198,6 +203,12 @@ cards:
             font-weight: bold;
             text-shadow: 1px 1px #0005;
             box-shadow: none;
+          }
+          bar-card-name {
+            margin-left: 20px;
+          }
+          ha-icon {
+            margin-left: 5px;
           }
       - type: "custom:mini-graph-card"
         entities:
@@ -237,7 +248,7 @@ cards:
         positions:
           icon: outside
           indicator: outside
-          title: outside
+          name: outside
           value: inside
           minmax: "off"
         severity:
@@ -258,7 +269,7 @@ cards:
         style: |-
           ha-card {
             box-shadow: none;
-            margin: 0 -15px;
+            margin: 8px -15px;
             background: rgba(0,0,0,0)
           }
           #states {
@@ -277,6 +288,12 @@ cards:
             font-weight: bold;
             text-shadow: 1px 1px #0005;
             box-shadow: none;
+          }
+          bar-card-name {
+            margin-left: 20px;
+          }
+          ha-icon {
+            margin-left: 5px;
           }
       - entity: sensor.hp_printer_inkcartridge_cyanmagentayellow
         name: Inkcartridge CMY
@@ -286,7 +303,7 @@ cards:
         positions:
           icon: outside
           indicator: outside
-          title: outside
+          name: outside
           value: inside
           minmax: "off"
         severity:
@@ -307,7 +324,7 @@ cards:
         style: |-
           ha-card {
             box-shadow: none;
-            margin: -15px;
+            margin: 8px -15px;
             background: rgba(0,0,0,0)
           }
           #states {
@@ -327,10 +344,16 @@ cards:
             text-shadow: 1px 1px #0005;
             box-shadow: none;
           }
+          bar-card-name {
+            margin-left: 20px;
+          }
+          ha-icon {
+            margin-left: 5px;
+          }
       - sensor.hp_printer_printer
       - sensor.hp_printer_scanner
       - sensor.hp_printer_status
-      - binary_sensor.hp_printer_status
+      - binary_sensor.hp_printer_connectivity
   - type: entities
     title: "Anycubic i3 Mega"
     entities:
@@ -348,7 +371,7 @@ cards:
         positions:
           icon: outside
           indicator: inside
-          title: outside
+          name: outside
           value: inside
           minmax: "off"
         width: 45%
@@ -356,7 +379,7 @@ cards:
         style: |-
           ha-card {
             box-shadow: none;
-            margin: -15px;
+            margin: 8px -15px;
             background: rgba(0,0,0,0)
           }
           #states {
@@ -374,6 +397,12 @@ cards:
             font-weight: bold;
             text-shadow: 1px 1px #0005;
             box-shadow: none;
+          }
+          bar-card-name {
+            margin-left: 20px;
+          }
+          ha-icon {
+            margin-left: 5px;
           }
       - entity: sensor.anycubic_i3_mega_print_finish_at
         name: Finished at

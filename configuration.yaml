@@ -47,14 +47,16 @@ lovelace:
       type: module
     - url: /local/community/mini-graph-card/mini-graph-card-bundle.js
       type: module
-    - url: /local/community/button-entity-row/button-entity-row.js
-      type: module
     - url: /local/community/lovelace-card-mod/card-mod.js
       type: module
     - url: /local/community/seventeen-track-card/seventeen-track-card.js
       type: module
+    - url: /local/community/lovelace-paper-buttons-row/paper-buttons-row.js
+      type: module
 
 mobile_app:
+
+browser_mod:
 
 frontend:
   themes: !include_dir_merge_named themes
